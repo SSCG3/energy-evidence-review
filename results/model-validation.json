@@ -1,0 +1,1532 @@
+{
+  "generated_at": "2026-10-29T01:45:27.398162+00:00",
+  "model": "deepseek/deepseek-v3.2",
+  "scope": "Live provider protocol and evidence-workflow demonstration; not statistical semantic accuracy or external review.",
+  "max_planned_completions": 9,
+  "runs": [
+    {
+      "case": "synthetic_conflict",
+      "success": true,
+      "source_id_check": true,
+      "result": {
+        "question": "capacity and power?",
+        "project": "storage-demo",
+        "status": "conflict",
+        "answer": "capacity: 100 MWh / 120 MWh（冲突，需人工确认）\npower: 50 MW",
+        "citations": [
+          {
+            "source": "ST-01",
+            "title": "示例储能站 · 工程概况",
+            "project": "storage-demo",
+            "field": "capacity",
+            "value": "100 MWh",
+            "normalized": "100 MWh",
+            "quote": "储能容量为100 MWh",
+            "start": 20,
+            "end": 32,
+            "line": 2,
+            "version": 1,
+            "source_url": null,
+            "data_kind": "synthetic"
+          },
+          {
+            "source": "ST-02",
+            "title": "示例储能站 · 待核技术记录",
+            "project": "storage-demo",
+            "field": "capacity",
+            "value": "120 MWh",
+            "normalized": "120 MWh",
+            "quote": "Storage capacity: 120 MWh",
+            "start": 14,
+            "end": 39,
+            "line": 2,
+            "version": 1,
+            "source_url": null,
+            "data_kind": "synthetic"
+          },
+          {
+            "source": "ST-01",
+            "title": "示例储能站 · 工程概况",
+            "project": "storage-demo",
+            "field": "power",
+            "value": "50 MW",
+            "normalized": "50 MW",
+            "quote": "额定功率为50 MW",
+            "start": 34,
+            "end": 44,
+            "line": 3,
+            "version": 1,
+            "source_url": null,
+            "data_kind": "synthetic"
+          },
+          {
+            "source": "ST-02",
+            "title": "示例储能站 · 待核技术记录",
+            "project": "storage-demo",
+            "field": "power",
+            "value": "50000 kW",
+            "normalized": "50 MW",
+            "quote": "Rated power: 50000 kW",
+            "start": 41,
+            "end": 62,
+            "line": 3,
+            "version": 1,
+            "source_url": null,
+            "data_kind": "synthetic"
+          }
+        ],
+        "decisions": [
+          {
+            "field": "capacity",
+            "status": "conflict",
+            "values": [
+              "100 MWh",
+              "120 MWh"
+            ],
+            "citations": [
+              {
+                "source": "ST-01",
+                "title": "示例储能站 · 工程概况",
+                "project": "storage-demo",
+                "field": "capacity",
+                "value": "100 MWh",
+                "normalized": "100 MWh",
+                "quote": "储能容量为100 MWh",
+                "start": 20,
+                "end": 32,
+                "line": 2,
+                "version": 1,
+                "source_url": null,
+                "data_kind": "synthetic"
+              },
+              {
+                "source": "ST-02",
+                "title": "示例储能站 · 待核技术记录",
+                "project": "storage-demo",
+                "field": "capacity",
+                "value": "120 MWh",
+                "normalized": "120 MWh",
+                "quote": "Storage capacity: 120 MWh",
+                "start": 14,
+                "end": 39,
+                "line": 2,
+                "version": 1,
+                "source_url": null,
+                "data_kind": "synthetic"
+              }
+            ],
+            "reason": "Disagreement needs human review"
+          },
+          {
+            "field": "power",
+            "status": "supported",
+            "values": [
+              "50 MW"
+            ],
+            "citations": [
+              {
+                "source": "ST-01",
+                "title": "示例储能站 · 工程概况",
+                "project": "storage-demo",
+                "field": "power",
+                "value": "50 MW",
+                "normalized": "50 MW",
+                "quote": "额定功率为50 MW",
+                "start": 34,
+                "end": 44,
+                "line": 3,
+                "version": 1,
+                "source_url": null,
+                "data_kind": "synthetic"
+              },
+              {
+                "source": "ST-02",
+                "title": "示例储能站 · 待核技术记录",
+                "project": "storage-demo",
+                "field": "power",
+                "value": "50000 kW",
+                "normalized": "50 MW",
+                "quote": "Rated power: 50000 kW",
+                "start": 41,
+                "end": 62,
+                "line": 3,
+                "version": 1,
+                "source_url": null,
+                "data_kind": "synthetic"
+              }
+            ],
+            "reason": "Visible claims agree after explicit supersession and unit normalization"
+          }
+        ],
+        "verification": {
+          "passed": true,
+          "findings": [],
+          "scope": "Exact source spans and rule-based field decisions, not general semantic truth"
+        },
+        "mode": "checked",
+        "provider": "llm",
+        "field": null,
+        "corpus_sha256": "b69a3345671152e247236607fb3a9068f88bf3a3907888bed91906e30c121343",
+        "version": "0.2.0",
+        "run_id": "68342a56-f5c1-4497-83d9-d4178d2056aa",
+        "model_collaboration": {
+          "analyst": {
+            "claims": [
+              {
+                "text": "The capacity is 100 MWh.",
+                "source_ids": [
+                  "ST-01"
+                ]
+              },
+              {
+                "text": "The capacity is 120 MWh.",
+                "source_ids": [
+                  "ST-02"
+                ]
+              },
+              {
+                "text": "The power is 50 MW.",
+                "source_ids": [
+                  "ST-01",
+                  "ST-02"
+                ]
+              }
+            ],
+            "limitations": [
+              "The evidence contains a direct conflict regarding the capacity (100 MWh vs. 120 MWh), indicating unresolved disagreement between sources.",
+              "The analysis is limited to the provided synthetic data; no external verification or context is available.",
+              "The 'reason' field in the decisions indicates the capacity conflict requires human review, suggesting the provided evidence is insufficient for a definitive resolution."
+            ]
+          },
+          "reviewer": {
+            "verdict": "revise",
+            "issues": [
+              "The analyst claims the capacity is 100 MWh and 120 MWh, but the evidence explicitly lists the status of the 'capacity' field as 'conflict' and states 'Disagreement needs human review'. The analyst should not present these conflicting values as definitive claims without acknowledging the conflict status.",
+              "The analyst lists 'The power is 50 MW' as a claim, but the evidence shows the 'power' field status is 'supported' and the 'reason' states 'Visible claims agree after explicit supersession and unit normalization'. The analyst should not list this as a claim if the evidence indicates it is already resolved and supported."
+            ],
+            "reason": "The analyst output incorrectly formats the evidence. The evidence shows 'capacity' is in a 'conflict' state, but the analyst lists both values as claims. The evidence shows 'power' is in a 'supported' state, but the analyst lists it as a claim. The analyst output should reflect the 'status' and 'reason' provided in the evidence rather than simply listing the values as claims."
+          },
+          "reporter": {
+            "note": "关于储能容量，存在来源冲突：ST-01报告为100 MWh，ST-02报告为120 MWh，需人工复核确认。关于额定功率，来源一致确认为50 MW。",
+            "needs_human_review": true
+          },
+          "usage": [
+            {
+              "role": "analyst",
+              "usage": {
+                "prompt_tokens": 562,
+                "completion_tokens": 180,
+                "total_tokens": 742,
+                "cost": 0.00021452,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00021452,
+                  "upstream_inference_prompt_cost": 0.00014612,
+                  "upstream_inference_completions_cost": 6.84e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              },
+              "model": "deepseek/deepseek-v3.2",
+              "response_id": "gen-1793238281-vQrt18flt6l0zEsQCJPn",
+              "provider": "DeepInfra"
+            },
+            {
+              "role": "reviewer",
+              "usage": {
+                "prompt_tokens": 708,
+                "completion_tokens": 229,
+                "total_tokens": 937,
+                "cost": 0.000134434,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.000134434,
+                  "upstream_inference_prompt_cost": 4.2834e-05,
+                  "upstream_inference_completions_cost": 9.16e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              },
+              "model": "z-ai/glm-4.7-flash",
+              "response_id": "gen-1793238296-XeKkAnuIM1pT1mIlRREw",
+              "provider": "Cloudflare"
+            },
+            {
+              "role": "reporter",
+              "usage": {
+                "prompt_tokens": 957,
+                "completion_tokens": 62,
+                "total_tokens": 1019,
+                "cost": 0.00027238,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00027238,
+                  "upstream_inference_prompt_cost": 0.00024882,
+                  "upstream_inference_completions_cost": 2.356e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              },
+              "model": "deepseek/deepseek-v3.2",
+              "response_id": "gen-1793238301-hyrISqqQk5NPmlMcw0oM",
+              "provider": "DeepInfra"
+            }
+          ],
+          "notice": "Model-role opinions remain unverified drafts; authoritative output is the structured evidence record."
+        },
+        "model_draft": "关于储能容量，存在来源冲突：ST-01报告为100 MWh，ST-02报告为120 MWh，需人工复核确认。关于额定功率，来源一致确认为50 MW。",
+        "trace": [
+          {
+            "id": 1,
+            "run_id": "68342a56-f5c1-4497-83d9-d4178d2056aa",
+            "timestamp": "2026-10-29T01:44:40.811508+00:00",
+            "sender": "user",
+            "receiver": "planner",
+            "type": "REQUEST",
+            "content": {
+              "question": "capacity and power?",
+              "role": "public",
+              "project": "storage-demo"
+            },
+            "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "hash": "4411aa0d63624dde1b7e6f64b4cb3c3cebda0f1972f18fe91dab8aa5e22bad3b"
+          },
+          {
+            "id": 2,
+            "run_id": "68342a56-f5c1-4497-83d9-d4178d2056aa",
+            "timestamp": "2026-10-29T01:44:40.811602+00:00",
+            "sender": "planner",
+            "receiver": "retriever",
+            "type": "HANDOFF",
+            "content": {
+              "question": "capacity and power?",
+              "fields": [
+                "capacity",
+                "power"
+              ],
+              "requires_human": false,
+              "strategy": "retrieve -> extract -> reconcile -> verify -> report"
+            },
+            "previous_hash": "4411aa0d63624dde1b7e6f64b4cb3c3cebda0f1972f18fe91dab8aa5e22bad3b",
+            "hash": "dd0cf685356fc720e029acaedcafdf5e109f7da314d6a149b75f91a9490c9c4b"
+          },
+          {
+            "id": 3,
+            "run_id": "68342a56-f5c1-4497-83d9-d4178d2056aa",
+            "timestamp": "2026-10-29T01:44:40.812380+00:00",
+            "sender": "retriever",
+            "receiver": "extractor",
+            "type": "HANDOFF",
+            "content": {
+              "source_ids": [
+                "ST-01",
+                "ST-02"
+              ],
+              "requested_fields": [
+                "capacity",
+                "power"
+              ]
+            },
+            "previous_hash": "dd0cf685356fc720e029acaedcafdf5e109f7da314d6a149b75f91a9490c9c4b",
+            "hash": "2a6da836a2621e87ef82a627b2058c12be289d29d39ff79c31488efa2600b8a0"
+          },
+          {
+            "id": 4,
+            "run_id": "68342a56-f5c1-4497-83d9-d4178d2056aa",
+            "timestamp": "2026-10-29T01:44:40.812646+00:00",
+            "sender": "extractor",
+            "receiver": "reconciler",
+            "type": "HANDOFF",
+            "content": {
+              "claims": [
+                {
+                  "source": "ST-01",
+                  "title": "示例储能站 · 工程概况",
+                  "project": "storage-demo",
+                  "field": "capacity",
+                  "value": "100 MWh",
+                  "normalized": "100 MWh",
+                  "quote": "储能容量为100 MWh",
+                  "start": 20,
+                  "end": 32,
+                  "line": 2,
+                  "version": 1,
+                  "source_url": null,
+                  "data_kind": "synthetic"
+                },
+                {
+                  "source": "ST-01",
+                  "title": "示例储能站 · 工程概况",
+                  "project": "storage-demo",
+                  "field": "power",
+                  "value": "50 MW",
+                  "normalized": "50 MW",
+                  "quote": "额定功率为50 MW",
+                  "start": 34,
+                  "end": 44,
+                  "line": 3,
+                  "version": 1,
+                  "source_url": null,
+                  "data_kind": "synthetic"
+                },
+                {
+                  "source": "ST-02",
+                  "title": "示例储能站 · 待核技术记录",
+                  "project": "storage-demo",
+                  "field": "capacity",
+                  "value": "120 MWh",
+                  "normalized": "120 MWh",
+                  "quote": "Storage capacity: 120 MWh",
+                  "start": 14,
+                  "end": 39,
+                  "line": 2,
+                  "version": 1,
+                  "source_url": null,
+                  "data_kind": "synthetic"
+                },
+                {
+                  "source": "ST-02",
+                  "title": "示例储能站 · 待核技术记录",
+                  "project": "storage-demo",
+                  "field": "power",
+                  "value": "50000 kW",
+                  "normalized": "50 MW",
+                  "quote": "Rated power: 50000 kW",
+                  "start": 41,
+                  "end": 62,
+                  "line": 3,
+                  "version": 1,
+                  "source_url": null,
+                  "data_kind": "synthetic"
+                }
+              ]
+            },
+            "previous_hash": "2a6da836a2621e87ef82a627b2058c12be289d29d39ff79c31488efa2600b8a0",
+            "hash": "00ff214d650fd9a590bb030fdf163ad81e236b094890123b29d3666ac7befb85"
+          },
+          {
+            "id": 5,
+            "run_id": "68342a56-f5c1-4497-83d9-d4178d2056aa",
+            "timestamp": "2026-10-29T01:44:40.812718+00:00",
+            "sender": "reconciler",
+            "receiver": "verifier",
+            "type": "HANDOFF",
+            "content": {
+              "decisions": [
+                {
+                  "field": "capacity",
+                  "status": "conflict",
+                  "values": [
+                    "100 MWh",
+                    "120 MWh"
+                  ],
+                  "citations": [
+                    {
+                      "source": "ST-01",
+                      "title": "示例储能站 · 工程概况",
+                      "project": "storage-demo",
+                      "field": "capacity",
+                      "value": "100 MWh",
+                      "normalized": "100 MWh",
+                      "quote": "储能容量为100 MWh",
+                      "start": 20,
+                      "end": 32,
+                      "line": 2,
+                      "version": 1,
+                      "source_url": null,
+                      "data_kind": "synthetic"
+                    },
+                    {
+                      "source": "ST-02",
+                      "title": "示例储能站 · 待核技术记录",
+                      "project": "storage-demo",
+                      "field": "capacity",
+                      "value": "120 MWh",
+                      "normalized": "120 MWh",
+                      "quote": "Storage capacity: 120 MWh",
+                      "start": 14,
+                      "end": 39,
+                      "line": 2,
+                      "version": 1,
+                      "source_url": null,
+                      "data_kind": "synthetic"
+                    }
+                  ],
+                  "reason": "Disagreement needs human review"
+                },
+                {
+                  "field": "power",
+                  "status": "supported",
+                  "values": [
+                    "50 MW"
+                  ],
+                  "citations": [
+                    {
+                      "source": "ST-01",
+                      "title": "示例储能站 · 工程概况",
+                      "project": "storage-demo",
+                      "field": "power",
+                      "value": "50 MW",
+                      "normalized": "50 MW",
+                      "quote": "额定功率为50 MW",
+                      "start": 34,
+                      "end": 44,
+                      "line": 3,
+                      "version": 1,
+                      "source_url": null,
+                      "data_kind": "synthetic"
+                    },
+                    {
+                      "source": "ST-02",
+                      "title": "示例储能站 · 待核技术记录",
+                      "project": "storage-demo",
+                      "field": "power",
+                      "value": "50000 kW",
+                      "normalized": "50 MW",
+                      "quote": "Rated power: 50000 kW",
+                      "start": 41,
+                      "end": 62,
+                      "line": 3,
+                      "version": 1,
+                      "source_url": null,
+                      "data_kind": "synthetic"
+                    }
+                  ],
+                  "reason": "Visible claims agree after explicit supersession and unit normalization"
+                }
+              ],
+              "mode": "checked"
+            },
+            "previous_hash": "00ff214d650fd9a590bb030fdf163ad81e236b094890123b29d3666ac7befb85",
+            "hash": "85bb6fa40163f75c83e8f74d2419be98555aea3fcae8a3edd20b4820bc9d75a3"
+          },
+          {
+            "id": 6,
+            "run_id": "68342a56-f5c1-4497-83d9-d4178d2056aa",
+            "timestamp": "2026-10-29T01:44:40.812778+00:00",
+            "sender": "verifier",
+            "receiver": "reporter",
+            "type": "RESPONSE",
+            "content": {
+              "passed": true,
+              "findings": [],
+              "scope": "Exact source spans and rule-based field decisions, not general semantic truth"
+            },
+            "previous_hash": "85bb6fa40163f75c83e8f74d2419be98555aea3fcae8a3edd20b4820bc9d75a3",
+            "hash": "54831e24d5637deaf3de1edfeebdde41f46c026afa37181602588bf2a79d3fb7"
+          },
+          {
+            "id": 7,
+            "run_id": "68342a56-f5c1-4497-83d9-d4178d2056aa",
+            "timestamp": "2026-10-29T01:44:56.261780+00:00",
+            "sender": "model_analyst",
+            "receiver": "model_reviewer",
+            "type": "HANDOFF",
+            "content": {
+              "claims": [
+                {
+                  "text": "The capacity is 100 MWh.",
+                  "source_ids": [
+                    "ST-01"
+                  ]
+                },
+                {
+                  "text": "The capacity is 120 MWh.",
+                  "source_ids": [
+                    "ST-02"
+                  ]
+                },
+                {
+                  "text": "The power is 50 MW.",
+                  "source_ids": [
+                    "ST-01",
+                    "ST-02"
+                  ]
+                }
+              ],
+              "limitations": [
+                "The evidence contains a direct conflict regarding the capacity (100 MWh vs. 120 MWh), indicating unresolved disagreement between sources.",
+                "The analysis is limited to the provided synthetic data; no external verification or context is available.",
+                "The 'reason' field in the decisions indicates the capacity conflict requires human review, suggesting the provided evidence is insufficient for a definitive resolution."
+              ]
+            },
+            "previous_hash": "54831e24d5637deaf3de1edfeebdde41f46c026afa37181602588bf2a79d3fb7",
+            "hash": "b3eef40c58a9a4aca0d31ced12ab7977872b8fee5b63c3cd9d54f41a1a995a3a"
+          },
+          {
+            "id": 8,
+            "run_id": "68342a56-f5c1-4497-83d9-d4178d2056aa",
+            "timestamp": "2026-10-29T01:45:00.671297+00:00",
+            "sender": "model_reviewer",
+            "receiver": "model_reporter",
+            "type": "HANDOFF",
+            "content": {
+              "verdict": "revise",
+              "issues": [
+                "The analyst claims the capacity is 100 MWh and 120 MWh, but the evidence explicitly lists the status of the 'capacity' field as 'conflict' and states 'Disagreement needs human review'. The analyst should not present these conflicting values as definitive claims without acknowledging the conflict status.",
+                "The analyst lists 'The power is 50 MW' as a claim, but the evidence shows the 'power' field status is 'supported' and the 'reason' states 'Visible claims agree after explicit supersession and unit normalization'. The analyst should not list this as a claim if the evidence indicates it is already resolved and supported."
+              ],
+              "reason": "The analyst output incorrectly formats the evidence. The evidence shows 'capacity' is in a 'conflict' state, but the analyst lists both values as claims. The evidence shows 'power' is in a 'supported' state, but the analyst lists it as a claim. The analyst output should reflect the 'status' and 'reason' provided in the evidence rather than simply listing the values as claims."
+            },
+            "previous_hash": "b3eef40c58a9a4aca0d31ced12ab7977872b8fee5b63c3cd9d54f41a1a995a3a",
+            "hash": "1cddb9b573d02589c677b61e577e33d63bbf7ab61d90fd3dd523fe4710d55b31"
+          },
+          {
+            "id": 9,
+            "run_id": "68342a56-f5c1-4497-83d9-d4178d2056aa",
+            "timestamp": "2026-10-29T01:45:04.026503+00:00",
+            "sender": "model_reporter",
+            "receiver": "human",
+            "type": "RESPONSE",
+            "content": {
+              "note": "关于储能容量，存在来源冲突：ST-01报告为100 MWh，ST-02报告为120 MWh，需人工复核确认。关于额定功率，来源一致确认为50 MW。",
+              "needs_human_review": true
+            },
+            "previous_hash": "1cddb9b573d02589c677b61e577e33d63bbf7ab61d90fd3dd523fe4710d55b31",
+            "hash": "26dca554a0a2fcc75cc6e23baf06dd64ca980cb33e74c722d38ea57c3c10d933"
+          },
+          {
+            "id": 10,
+            "run_id": "68342a56-f5c1-4497-83d9-d4178d2056aa",
+            "timestamp": "2026-10-29T01:45:04.026744+00:00",
+            "sender": "reporter",
+            "receiver": "human",
+            "type": "RESPONSE",
+            "content": {
+              "status": "conflict",
+              "answer": "capacity: 100 MWh / 120 MWh（冲突，需人工确认）\npower: 50 MW",
+              "requires_human": true,
+              "result_hash": "22e3046d7ced5f41df181b30be5a8e336e82672fac25d614069ad2c78da84498"
+            },
+            "previous_hash": "26dca554a0a2fcc75cc6e23baf06dd64ca980cb33e74c722d38ea57c3c10d933",
+            "hash": "553a21cfbacaf203fe9b28ec3eeb626e5f3550584416b0d7977520c8e0e7d201"
+          }
+        ],
+        "trace_valid": true,
+        "elapsed_ms": 23215.557
+      }
+    },
+    {
+      "case": "public_eia",
+      "success": true,
+      "source_id_check": true,
+      "result": {
+        "question": "net summer generating capacity and net generation and average retail price?",
+        "project": "eia-ca-2024",
+        "status": "supported",
+        "answer": "generation_capacity: 96773 MW\ngeneration: 214191383 MWh\nretail_price: 27.04 cents/kwh",
+        "citations": [
+          {
+            "source": "EIA-CA-2024",
+            "title": "EIA California Electricity Profile 2024",
+            "project": "eia-ca-2024",
+            "field": "generation_capacity",
+            "value": "96773 MW",
+            "normalized": "96773 MW",
+            "quote": "Net summer generating capacity: 96773 MW",
+            "start": 74,
+            "end": 114,
+            "line": 2,
+            "version": 1,
+            "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+            "data_kind": "public_eia"
+          },
+          {
+            "source": "EIA-CA-2024",
+            "title": "EIA California Electricity Profile 2024",
+            "project": "eia-ca-2024",
+            "field": "generation",
+            "value": "214191383 MWh",
+            "normalized": "214191383 MWh",
+            "quote": "Net generation: 214191383 MWh",
+            "start": 116,
+            "end": 145,
+            "line": 3,
+            "version": 1,
+            "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+            "data_kind": "public_eia"
+          },
+          {
+            "source": "EIA-CA-2024",
+            "title": "EIA California Electricity Profile 2024",
+            "project": "eia-ca-2024",
+            "field": "retail_price",
+            "value": "27.04 cents/kWh",
+            "normalized": "27.04 cents/kwh",
+            "quote": "Average retail price: 27.04 cents/kWh",
+            "start": 147,
+            "end": 184,
+            "line": 4,
+            "version": 1,
+            "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+            "data_kind": "public_eia"
+          }
+        ],
+        "decisions": [
+          {
+            "field": "generation_capacity",
+            "status": "supported",
+            "values": [
+              "96773 MW"
+            ],
+            "citations": [
+              {
+                "source": "EIA-CA-2024",
+                "title": "EIA California Electricity Profile 2024",
+                "project": "eia-ca-2024",
+                "field": "generation_capacity",
+                "value": "96773 MW",
+                "normalized": "96773 MW",
+                "quote": "Net summer generating capacity: 96773 MW",
+                "start": 74,
+                "end": 114,
+                "line": 2,
+                "version": 1,
+                "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+                "data_kind": "public_eia"
+              }
+            ],
+            "reason": "Visible claims agree after explicit supersession and unit normalization"
+          },
+          {
+            "field": "generation",
+            "status": "supported",
+            "values": [
+              "214191383 MWh"
+            ],
+            "citations": [
+              {
+                "source": "EIA-CA-2024",
+                "title": "EIA California Electricity Profile 2024",
+                "project": "eia-ca-2024",
+                "field": "generation",
+                "value": "214191383 MWh",
+                "normalized": "214191383 MWh",
+                "quote": "Net generation: 214191383 MWh",
+                "start": 116,
+                "end": 145,
+                "line": 3,
+                "version": 1,
+                "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+                "data_kind": "public_eia"
+              }
+            ],
+            "reason": "Visible claims agree after explicit supersession and unit normalization"
+          },
+          {
+            "field": "retail_price",
+            "status": "supported",
+            "values": [
+              "27.04 cents/kwh"
+            ],
+            "citations": [
+              {
+                "source": "EIA-CA-2024",
+                "title": "EIA California Electricity Profile 2024",
+                "project": "eia-ca-2024",
+                "field": "retail_price",
+                "value": "27.04 cents/kWh",
+                "normalized": "27.04 cents/kwh",
+                "quote": "Average retail price: 27.04 cents/kWh",
+                "start": 147,
+                "end": 184,
+                "line": 4,
+                "version": 1,
+                "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+                "data_kind": "public_eia"
+              }
+            ],
+            "reason": "Visible claims agree after explicit supersession and unit normalization"
+          }
+        ],
+        "verification": {
+          "passed": true,
+          "findings": [],
+          "scope": "Exact source spans and rule-based field decisions, not general semantic truth"
+        },
+        "mode": "checked",
+        "provider": "llm",
+        "field": null,
+        "corpus_sha256": "bd884750c481f0bc049545e210173a60ea7211b6e3762e32de6306760f87b50e",
+        "version": "0.2.0",
+        "run_id": "40a6afd5-1a62-4881-87d5-56de5291837a",
+        "model_collaboration": {
+          "analyst": {
+            "claims": [
+              {
+                "text": "Net summer generating capacity is 96773 MW.",
+                "source_ids": [
+                  "EIA-CA-2024"
+                ]
+              },
+              {
+                "text": "Net generation is 214191383 MWh.",
+                "source_ids": [
+                  "EIA-CA-2024"
+                ]
+              },
+              {
+                "text": "Average retail price is 27.04 cents/kwh.",
+                "source_ids": [
+                  "EIA-CA-2024"
+                ]
+              }
+            ],
+            "limitations": [
+              "All data is sourced from a single document (EIA-CA-2024) and year (2024), providing no comparative or historical context.",
+              "The data is presented as untrusted raw figures without verification of the original source's accuracy or methodology.",
+              "The geographic scope (presumably California, inferred from 'CA' in the source identifier) is not explicitly stated in the provided evidence structure.",
+              "The 'supported' status in the decisions indicates internal consistency within the provided evidence but does not confirm external validity."
+            ]
+          },
+          "reviewer": {
+            "verdict": "approve",
+            "issues": [],
+            "reason": "The analyst's claims accurately reflect the values extracted from the provided evidence. The values 96773 MW, 214191383 MWh, and 27.04 cents/kwh are directly supported by the corresponding citations in the evidence, and the analyst correctly identifies the source as EIA-CA-2024. The limitations listed by the analyst are valid observations regarding the scope and reliability of the data, but they do not constitute errors in the extraction of the specific values requested."
+          },
+          "reporter": {
+            "note": "根据EIA-CA-2024文件，2024年加利福尼亚州的净夏季发电容量为96773兆瓦，净发电量为214191383兆瓦时，平均零售电价为27.04美分/千瓦时。所有数据均来自同一份2024年的单一来源，缺乏历史对比或外部验证，且地理范围（加州）需结合上下文推断。",
+            "needs_human_review": true
+          },
+          "usage": [
+            {
+              "role": "analyst",
+              "usage": {
+                "prompt_tokens": 997,
+                "completion_tokens": 227,
+                "total_tokens": 1224,
+                "cost": 0.00034548,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00034548,
+                  "upstream_inference_prompt_cost": 0.00025922,
+                  "upstream_inference_completions_cost": 8.626e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              },
+              "model": "deepseek/deepseek-v3.2",
+              "response_id": "gen-1793238304-dCYgtirtT1Yws3ORZjP1",
+              "provider": "DeepInfra"
+            },
+            {
+              "role": "reviewer",
+              "usage": {
+                "prompt_tokens": 1198,
+                "completion_tokens": 116,
+                "total_tokens": 1314,
+                "cost": 0.000118879,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.000118879,
+                  "upstream_inference_prompt_cost": 7.2479e-05,
+                  "upstream_inference_completions_cost": 4.64e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              },
+              "model": "z-ai/glm-4.7-flash",
+              "response_id": "gen-1793238312-hVAFPCxHZzoG0SxhfTry",
+              "provider": "Cloudflare"
+            },
+            {
+              "role": "reporter",
+              "usage": {
+                "prompt_tokens": 1323,
+                "completion_tokens": 100,
+                "total_tokens": 1423,
+                "cost": 0.00038198,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 0.00038198,
+                  "upstream_inference_prompt_cost": 0.00034398,
+                  "upstream_inference_completions_cost": 3.8e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              },
+              "model": "deepseek/deepseek-v3.2",
+              "response_id": "gen-1793238316-XrGsJr3DbG0TDOx5DoOu",
+              "provider": "DeepInfra"
+            }
+          ],
+          "notice": "Model-role opinions remain unverified drafts; authoritative output is the structured evidence record."
+        },
+        "model_draft": "根据EIA-CA-2024文件，2024年加利福尼亚州的净夏季发电容量为96773兆瓦，净发电量为214191383兆瓦时，平均零售电价为27.04美分/千瓦时。所有数据均来自同一份2024年的单一来源，缺乏历史对比或外部验证，且地理范围（加州）需结合上下文推断。",
+        "trace": [
+          {
+            "id": 1,
+            "run_id": "40a6afd5-1a62-4881-87d5-56de5291837a",
+            "timestamp": "2026-10-29T01:45:04.027138+00:00",
+            "sender": "user",
+            "receiver": "planner",
+            "type": "REQUEST",
+            "content": {
+              "question": "net summer generating capacity and net generation and average retail price?",
+              "role": "public",
+              "project": "eia-ca-2024"
+            },
+            "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "hash": "590614ee29a48092c5df5c158cb312cb2dbdaa583d72c6e02e1563c33ee4e91a"
+          },
+          {
+            "id": 2,
+            "run_id": "40a6afd5-1a62-4881-87d5-56de5291837a",
+            "timestamp": "2026-10-29T01:45:04.027182+00:00",
+            "sender": "planner",
+            "receiver": "retriever",
+            "type": "HANDOFF",
+            "content": {
+              "question": "net summer generating capacity and net generation and average retail price?",
+              "fields": [
+                "generation_capacity",
+                "generation",
+                "retail_price"
+              ],
+              "requires_human": false,
+              "strategy": "retrieve -> extract -> reconcile -> verify -> report"
+            },
+            "previous_hash": "590614ee29a48092c5df5c158cb312cb2dbdaa583d72c6e02e1563c33ee4e91a",
+            "hash": "78c11635a5e3df37b9fd79afc9b951681ecbb03a3f759713322c88ed972a233c"
+          },
+          {
+            "id": 3,
+            "run_id": "40a6afd5-1a62-4881-87d5-56de5291837a",
+            "timestamp": "2026-10-29T01:45:04.028014+00:00",
+            "sender": "retriever",
+            "receiver": "extractor",
+            "type": "HANDOFF",
+            "content": {
+              "source_ids": [
+                "EIA-CA-2024"
+              ],
+              "requested_fields": [
+                "generation_capacity",
+                "generation",
+                "retail_price"
+              ]
+            },
+            "previous_hash": "78c11635a5e3df37b9fd79afc9b951681ecbb03a3f759713322c88ed972a233c",
+            "hash": "c3f4db7b2158585151414ebb89c821ade1dd0f84d578fa24466e8b182dc134bc"
+          },
+          {
+            "id": 4,
+            "run_id": "40a6afd5-1a62-4881-87d5-56de5291837a",
+            "timestamp": "2026-10-29T01:45:04.028179+00:00",
+            "sender": "extractor",
+            "receiver": "reconciler",
+            "type": "HANDOFF",
+            "content": {
+              "claims": [
+                {
+                  "source": "EIA-CA-2024",
+                  "title": "EIA California Electricity Profile 2024",
+                  "project": "eia-ca-2024",
+                  "field": "generation_capacity",
+                  "value": "96773 MW",
+                  "normalized": "96773 MW",
+                  "quote": "Net summer generating capacity: 96773 MW",
+                  "start": 74,
+                  "end": 114,
+                  "line": 2,
+                  "version": 1,
+                  "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+                  "data_kind": "public_eia"
+                },
+                {
+                  "source": "EIA-CA-2024",
+                  "title": "EIA California Electricity Profile 2024",
+                  "project": "eia-ca-2024",
+                  "field": "generation",
+                  "value": "214191383 MWh",
+                  "normalized": "214191383 MWh",
+                  "quote": "Net generation: 214191383 MWh",
+                  "start": 116,
+                  "end": 145,
+                  "line": 3,
+                  "version": 1,
+                  "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+                  "data_kind": "public_eia"
+                },
+                {
+                  "source": "EIA-CA-2024",
+                  "title": "EIA California Electricity Profile 2024",
+                  "project": "eia-ca-2024",
+                  "field": "retail_price",
+                  "value": "27.04 cents/kWh",
+                  "normalized": "27.04 cents/kwh",
+                  "quote": "Average retail price: 27.04 cents/kWh",
+                  "start": 147,
+                  "end": 184,
+                  "line": 4,
+                  "version": 1,
+                  "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+                  "data_kind": "public_eia"
+                }
+              ]
+            },
+            "previous_hash": "c3f4db7b2158585151414ebb89c821ade1dd0f84d578fa24466e8b182dc134bc",
+            "hash": "2a94aba00d61ed9a992f596680945034c589327f987b9a40f4632c4594060b34"
+          },
+          {
+            "id": 5,
+            "run_id": "40a6afd5-1a62-4881-87d5-56de5291837a",
+            "timestamp": "2026-10-29T01:45:04.028292+00:00",
+            "sender": "reconciler",
+            "receiver": "verifier",
+            "type": "HANDOFF",
+            "content": {
+              "decisions": [
+                {
+                  "field": "generation_capacity",
+                  "status": "supported",
+                  "values": [
+                    "96773 MW"
+                  ],
+                  "citations": [
+                    {
+                      "source": "EIA-CA-2024",
+                      "title": "EIA California Electricity Profile 2024",
+                      "project": "eia-ca-2024",
+                      "field": "generation_capacity",
+                      "value": "96773 MW",
+                      "normalized": "96773 MW",
+                      "quote": "Net summer generating capacity: 96773 MW",
+                      "start": 74,
+                      "end": 114,
+                      "line": 2,
+                      "version": 1,
+                      "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+                      "data_kind": "public_eia"
+                    }
+                  ],
+                  "reason": "Visible claims agree after explicit supersession and unit normalization"
+                },
+                {
+                  "field": "generation",
+                  "status": "supported",
+                  "values": [
+                    "214191383 MWh"
+                  ],
+                  "citations": [
+                    {
+                      "source": "EIA-CA-2024",
+                      "title": "EIA California Electricity Profile 2024",
+                      "project": "eia-ca-2024",
+                      "field": "generation",
+                      "value": "214191383 MWh",
+                      "normalized": "214191383 MWh",
+                      "quote": "Net generation: 214191383 MWh",
+                      "start": 116,
+                      "end": 145,
+                      "line": 3,
+                      "version": 1,
+                      "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+                      "data_kind": "public_eia"
+                    }
+                  ],
+                  "reason": "Visible claims agree after explicit supersession and unit normalization"
+                },
+                {
+                  "field": "retail_price",
+                  "status": "supported",
+                  "values": [
+                    "27.04 cents/kwh"
+                  ],
+                  "citations": [
+                    {
+                      "source": "EIA-CA-2024",
+                      "title": "EIA California Electricity Profile 2024",
+                      "project": "eia-ca-2024",
+                      "field": "retail_price",
+                      "value": "27.04 cents/kWh",
+                      "normalized": "27.04 cents/kwh",
+                      "quote": "Average retail price: 27.04 cents/kWh",
+                      "start": 147,
+                      "end": 184,
+                      "line": 4,
+                      "version": 1,
+                      "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+                      "data_kind": "public_eia"
+                    }
+                  ],
+                  "reason": "Visible claims agree after explicit supersession and unit normalization"
+                }
+              ],
+              "mode": "checked"
+            },
+            "previous_hash": "2a94aba00d61ed9a992f596680945034c589327f987b9a40f4632c4594060b34",
+            "hash": "2dd1eb0bd060d8927d7be0715070f4df8b33449d81ef9eaad65e7ecd0dc87523"
+          },
+          {
+            "id": 6,
+            "run_id": "40a6afd5-1a62-4881-87d5-56de5291837a",
+            "timestamp": "2026-10-29T01:45:04.028403+00:00",
+            "sender": "verifier",
+            "receiver": "reporter",
+            "type": "RESPONSE",
+            "content": {
+              "passed": true,
+              "findings": [],
+              "scope": "Exact source spans and rule-based field decisions, not general semantic truth"
+            },
+            "previous_hash": "2dd1eb0bd060d8927d7be0715070f4df8b33449d81ef9eaad65e7ecd0dc87523",
+            "hash": "b769263b45f8cb771cedabdae82d82cf83d5078f9cb395be5932bbe22cfdd1d4"
+          },
+          {
+            "id": 7,
+            "run_id": "40a6afd5-1a62-4881-87d5-56de5291837a",
+            "timestamp": "2026-10-29T01:45:12.433008+00:00",
+            "sender": "model_analyst",
+            "receiver": "model_reviewer",
+            "type": "HANDOFF",
+            "content": {
+              "claims": [
+                {
+                  "text": "Net summer generating capacity is 96773 MW.",
+                  "source_ids": [
+                    "EIA-CA-2024"
+                  ]
+                },
+                {
+                  "text": "Net generation is 214191383 MWh.",
+                  "source_ids": [
+                    "EIA-CA-2024"
+                  ]
+                },
+                {
+                  "text": "Average retail price is 27.04 cents/kwh.",
+                  "source_ids": [
+                    "EIA-CA-2024"
+                  ]
+                }
+              ],
+              "limitations": [
+                "All data is sourced from a single document (EIA-CA-2024) and year (2024), providing no comparative or historical context.",
+                "The data is presented as untrusted raw figures without verification of the original source's accuracy or methodology.",
+                "The geographic scope (presumably California, inferred from 'CA' in the source identifier) is not explicitly stated in the provided evidence structure.",
+                "The 'supported' status in the decisions indicates internal consistency within the provided evidence but does not confirm external validity."
+              ]
+            },
+            "previous_hash": "b769263b45f8cb771cedabdae82d82cf83d5078f9cb395be5932bbe22cfdd1d4",
+            "hash": "f347129eb0747c190ad15e08139116d999f902d42dca9b38c1d77576930d7132"
+          },
+          {
+            "id": 8,
+            "run_id": "40a6afd5-1a62-4881-87d5-56de5291837a",
+            "timestamp": "2026-10-29T01:45:15.993093+00:00",
+            "sender": "model_reviewer",
+            "receiver": "model_reporter",
+            "type": "HANDOFF",
+            "content": {
+              "verdict": "approve",
+              "issues": [],
+              "reason": "The analyst's claims accurately reflect the values extracted from the provided evidence. The values 96773 MW, 214191383 MWh, and 27.04 cents/kwh are directly supported by the corresponding citations in the evidence, and the analyst correctly identifies the source as EIA-CA-2024. The limitations listed by the analyst are valid observations regarding the scope and reliability of the data, but they do not constitute errors in the extraction of the specific values requested."
+            },
+            "previous_hash": "f347129eb0747c190ad15e08139116d999f902d42dca9b38c1d77576930d7132",
+            "hash": "e9024c233caeb6dc7ca65af67e17af28ae23db8685c8bc20fbd5f8c9211a0f8e"
+          },
+          {
+            "id": 9,
+            "run_id": "40a6afd5-1a62-4881-87d5-56de5291837a",
+            "timestamp": "2026-10-29T01:45:19.898224+00:00",
+            "sender": "model_reporter",
+            "receiver": "human",
+            "type": "RESPONSE",
+            "content": {
+              "note": "根据EIA-CA-2024文件，2024年加利福尼亚州的净夏季发电容量为96773兆瓦，净发电量为214191383兆瓦时，平均零售电价为27.04美分/千瓦时。所有数据均来自同一份2024年的单一来源，缺乏历史对比或外部验证，且地理范围（加州）需结合上下文推断。",
+              "needs_human_review": true
+            },
+            "previous_hash": "e9024c233caeb6dc7ca65af67e17af28ae23db8685c8bc20fbd5f8c9211a0f8e",
+            "hash": "1350e7ab0e7679cfd724c7363df8032283f90ba134c72e7e632da6466b5ef8db"
+          },
+          {
+            "id": 10,
+            "run_id": "40a6afd5-1a62-4881-87d5-56de5291837a",
+            "timestamp": "2026-10-29T01:45:19.898491+00:00",
+            "sender": "reporter",
+            "receiver": "human",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "generation_capacity: 96773 MW\ngeneration: 214191383 MWh\nretail_price: 27.04 cents/kwh",
+              "requires_human": false,
+              "result_hash": "50f98ace11f58ba0b7cd7ed0f165e35e5f145f353c8bb5a93ad6216b0888cf20"
+            },
+            "previous_hash": "1350e7ab0e7679cfd724c7363df8032283f90ba134c72e7e632da6466b5ef8db",
+            "hash": "4d05618e8ca321bca061e081976513b930a1b36d681e9ced5472b4f98dcc31a0"
+          }
+        ],
+        "trace_valid": true,
+        "elapsed_ms": 15871.701
+      }
+    },
+    {
+      "case": "public_missing",
+      "success": true,
+      "source_id_check": true,
+      "result": {
+        "question": "investment?",
+        "project": "eia-ca-2024",
+        "status": "insufficient",
+        "answer": "investment: 资料中未找到",
+        "citations": [],
+        "decisions": [
+          {
+            "field": "investment",
+            "status": "insufficient",
+            "values": [],
+            "citations": [],
+            "reason": "No visible supporting claim"
+          }
+        ],
+        "verification": {
+          "passed": true,
+          "findings": [],
+          "scope": "Exact source spans and rule-based field decisions, not general semantic truth"
+        },
+        "mode": "checked",
+        "provider": "llm",
+        "field": "investment",
+        "corpus_sha256": "bd884750c481f0bc049545e210173a60ea7211b6e3762e32de6306760f87b50e",
+        "version": "0.2.0",
+        "run_id": "347c00d9-eedb-4861-a1b2-073a70f51690",
+        "model_collaboration": {
+          "analyst": {
+            "claims": [],
+            "limitations": [
+              "The provided evidence indicates that information regarding 'investment' is insufficient, with no supporting claims or citations available. Therefore, no specific claims can be extracted from the evidence."
+            ]
+          },
+          "reviewer": {
+            "verdict": "approve",
+            "issues": [],
+            "reason": "The analyst correctly identified that the evidence contains no claims regarding 'investment' and accurately reflected the 'insufficient' status. The output is consistent with the provided evidence."
+          },
+          "reporter": {
+            "note": "根据证据，关于“投资”的信息不足，无支持性主张或引用，无法提取具体信息。",
+            "needs_human_review": true
+          },
+          "usage": [
+            {
+              "role": "analyst",
+              "usage": {
+                "prompt_tokens": 101,
+                "completion_tokens": 48,
+                "total_tokens": 149,
+                "cost": 4.45e-05,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 4.45e-05,
+                  "upstream_inference_prompt_cost": 2.626e-05,
+                  "upstream_inference_completions_cost": 1.824e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              },
+              "model": "deepseek/deepseek-v3.2",
+              "response_id": "gen-1793238320-hWN7gl14exf6r7r0Isl4",
+              "provider": "DeepInfra"
+            },
+            {
+              "role": "reviewer",
+              "usage": {
+                "prompt_tokens": 153,
+                "completion_tokens": 50,
+                "total_tokens": 203,
+                "cost": 2.92565e-05,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 2.92565e-05,
+                  "upstream_inference_prompt_cost": 9.2565e-06,
+                  "upstream_inference_completions_cost": 2e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              },
+              "model": "z-ai/glm-4.7-flash",
+              "response_id": "gen-1793238323-DeBFQDe2S9B3Efph0GnS",
+              "provider": "Cloudflare"
+            },
+            {
+              "role": "reporter",
+              "usage": {
+                "prompt_tokens": 207,
+                "completion_tokens": 42,
+                "total_tokens": 249,
+                "cost": 6.978e-05,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 6.978e-05,
+                  "upstream_inference_prompt_cost": 5.382e-05,
+                  "upstream_inference_completions_cost": 1.596e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              },
+              "model": "deepseek/deepseek-v3.2",
+              "response_id": "gen-1793238325-xYtJlR76sxCaQmAGFPAM",
+              "provider": "DeepInfra"
+            }
+          ],
+          "notice": "Model-role opinions remain unverified drafts; authoritative output is the structured evidence record."
+        },
+        "model_draft": "根据证据，关于“投资”的信息不足，无支持性主张或引用，无法提取具体信息。",
+        "trace": [
+          {
+            "id": 1,
+            "run_id": "347c00d9-eedb-4861-a1b2-073a70f51690",
+            "timestamp": "2026-10-29T01:45:19.898893+00:00",
+            "sender": "user",
+            "receiver": "planner",
+            "type": "REQUEST",
+            "content": {
+              "question": "investment?",
+              "role": "public",
+              "project": "eia-ca-2024"
+            },
+            "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "hash": "f081f4f589e56e0fff71037744dab764a2c02cf595d967d67e0156f997b80063"
+          },
+          {
+            "id": 2,
+            "run_id": "347c00d9-eedb-4861-a1b2-073a70f51690",
+            "timestamp": "2026-10-29T01:45:19.898931+00:00",
+            "sender": "planner",
+            "receiver": "retriever",
+            "type": "HANDOFF",
+            "content": {
+              "question": "investment?",
+              "fields": [
+                "investment"
+              ],
+              "requires_human": false,
+              "strategy": "retrieve -> extract -> reconcile -> verify -> report"
+            },
+            "previous_hash": "f081f4f589e56e0fff71037744dab764a2c02cf595d967d67e0156f997b80063",
+            "hash": "2c76898e2be7820c192d440eb2f41ad90471e25ae9f28d8053c06c460a8ea172"
+          },
+          {
+            "id": 3,
+            "run_id": "347c00d9-eedb-4861-a1b2-073a70f51690",
+            "timestamp": "2026-10-29T01:45:19.899335+00:00",
+            "sender": "retriever",
+            "receiver": "extractor",
+            "type": "HANDOFF",
+            "content": {
+              "source_ids": [],
+              "requested_fields": [
+                "investment"
+              ]
+            },
+            "previous_hash": "2c76898e2be7820c192d440eb2f41ad90471e25ae9f28d8053c06c460a8ea172",
+            "hash": "e54a5b5bcef244b536cbf061e11ef3b297756a84354cdb014002b67bbdd5c202"
+          },
+          {
+            "id": 4,
+            "run_id": "347c00d9-eedb-4861-a1b2-073a70f51690",
+            "timestamp": "2026-10-29T01:45:19.899362+00:00",
+            "sender": "extractor",
+            "receiver": "reconciler",
+            "type": "HANDOFF",
+            "content": {
+              "claims": []
+            },
+            "previous_hash": "e54a5b5bcef244b536cbf061e11ef3b297756a84354cdb014002b67bbdd5c202",
+            "hash": "f2ed4176be40936461644ed1ff68314533bcfae3f007a063ae7e93cb2480ae8c"
+          },
+          {
+            "id": 5,
+            "run_id": "347c00d9-eedb-4861-a1b2-073a70f51690",
+            "timestamp": "2026-10-29T01:45:19.899393+00:00",
+            "sender": "reconciler",
+            "receiver": "verifier",
+            "type": "HANDOFF",
+            "content": {
+              "decisions": [
+                {
+                  "field": "investment",
+                  "status": "insufficient",
+                  "values": [],
+                  "citations": [],
+                  "reason": "No visible supporting claim"
+                }
+              ],
+              "mode": "checked"
+            },
+            "previous_hash": "f2ed4176be40936461644ed1ff68314533bcfae3f007a063ae7e93cb2480ae8c",
+            "hash": "3fdd728fc88d13877a4ff8403e7a292b96f7df9b968f9173084d22486fd9ee4a"
+          },
+          {
+            "id": 6,
+            "run_id": "347c00d9-eedb-4861-a1b2-073a70f51690",
+            "timestamp": "2026-10-29T01:45:19.899415+00:00",
+            "sender": "verifier",
+            "receiver": "reporter",
+            "type": "RESPONSE",
+            "content": {
+              "passed": true,
+              "findings": [],
+              "scope": "Exact source spans and rule-based field decisions, not general semantic truth"
+            },
+            "previous_hash": "3fdd728fc88d13877a4ff8403e7a292b96f7df9b968f9173084d22486fd9ee4a",
+            "hash": "d20c55ec4554cc96a963167476045cc391b53bd77b9c34fd9a32309d8068f713"
+          },
+          {
+            "id": 7,
+            "run_id": "347c00d9-eedb-4861-a1b2-073a70f51690",
+            "timestamp": "2026-10-29T01:45:23.356606+00:00",
+            "sender": "model_analyst",
+            "receiver": "model_reviewer",
+            "type": "HANDOFF",
+            "content": {
+              "claims": [],
+              "limitations": [
+                "The provided evidence indicates that information regarding 'investment' is insufficient, with no supporting claims or citations available. Therefore, no specific claims can be extracted from the evidence."
+              ]
+            },
+            "previous_hash": "d20c55ec4554cc96a963167476045cc391b53bd77b9c34fd9a32309d8068f713",
+            "hash": "44f791a3b0a6a7d757a18b1d8f166f9cdf2ab2ccee13660fa5a5f1c3e6797289"
+          },
+          {
+            "id": 8,
+            "run_id": "347c00d9-eedb-4861-a1b2-073a70f51690",
+            "timestamp": "2026-10-29T01:45:25.213199+00:00",
+            "sender": "model_reviewer",
+            "receiver": "model_reporter",
+            "type": "HANDOFF",
+            "content": {
+              "verdict": "approve",
+              "issues": [],
+              "reason": "The analyst correctly identified that the evidence contains no claims regarding 'investment' and accurately reflected the 'insufficient' status. The output is consistent with the provided evidence."
+            },
+            "previous_hash": "44f791a3b0a6a7d757a18b1d8f166f9cdf2ab2ccee13660fa5a5f1c3e6797289",
+            "hash": "826b3a5c8a56596eec1bae4ea042c99896171824d8dfb2b9ebf5f5a1c4537374"
+          },
+          {
+            "id": 9,
+            "run_id": "347c00d9-eedb-4861-a1b2-073a70f51690",
+            "timestamp": "2026-10-29T01:45:27.397766+00:00",
+            "sender": "model_reporter",
+            "receiver": "human",
+            "type": "RESPONSE",
+            "content": {
+              "note": "根据证据，关于“投资”的信息不足，无支持性主张或引用，无法提取具体信息。",
+              "needs_human_review": true
+            },
+            "previous_hash": "826b3a5c8a56596eec1bae4ea042c99896171824d8dfb2b9ebf5f5a1c4537374",
+            "hash": "88d13c53e81b6e4d39634ae76bc0b1329c472bf1da2bfd14fad51e5175fec084"
+          },
+          {
+            "id": 10,
+            "run_id": "347c00d9-eedb-4861-a1b2-073a70f51690",
+            "timestamp": "2026-10-29T01:45:27.397926+00:00",
+            "sender": "reporter",
+            "receiver": "human",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "investment: 资料中未找到",
+              "requires_human": true,
+              "result_hash": "2a90e9522bc0969776d972fa27037c76d3a3195beb9cbd0665e3e6f68f9cc470"
+            },
+            "previous_hash": "88d13c53e81b6e4d39634ae76bc0b1329c472bf1da2bfd14fad51e5175fec084",
+            "hash": "f65d8a84f53d85890dd2973c511a4626afa974f443c4ed65d5b53db06c9c1752"
+          }
+        ],
+        "trace_valid": true,
+        "elapsed_ms": 7499.275
+      }
+    }
+  ],
+  "successful_scenarios": 3,
+  "engine_sources_sha256": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agents.py": "ea4ccd8c46e4194cce802ac3b239f2bfff8b8c350942de00928d5b00e3061918",
+    "corpus.py": "7dff90f49e995e81645f1f3bf41dfa2b079a43fe4d43129c0d885ee8b01c5475",
+    "engine.py": "2157d2d0fa68f5a4e6364c4559eaed8293e87c2583270a84a84dd8b2c85668e8",
+    "model.py": "be2a6d6ecae2f90b98dc77e276188b5de029838dffc2f028a7fab15c91c7aa48",
+    "protocol.py": "b6924bb8563a352bbcaee574e0b73912b6190253aced4d8ee8f6894c0e8ff6ba"
+  }
+}

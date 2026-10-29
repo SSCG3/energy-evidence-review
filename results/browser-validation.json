@@ -1,0 +1,42 @@
+{
+  "captured_at": "2026-10-29T01:49:38.021Z",
+  "url": "http://127.0.0.1:8765",
+  "browser": "Chrome/148.0.7778.215",
+  "targetId": "72B2E00139FC4F24FC9423ABA63ADBB2",
+  "checks": [
+    {
+      "name": "conflict citations",
+      "passed": true
+    },
+    {
+      "name": "actual model note in UI",
+      "passed": true
+    },
+    {
+      "name": "missing information",
+      "passed": true
+    },
+    {
+      "name": "simulated internal visibility",
+      "passed": true
+    },
+    {
+      "name": "review brief",
+      "passed": true
+    },
+    {
+      "name": "text import API",
+      "passed": true
+    },
+    {
+      "name": "mobile no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "no browser runtime exceptions",
+      "passed": true
+    }
+  ],
+  "exceptions": [],
+  "screenshot_method": "ImageMagick capture of actual DISPLAY root in noVNC session; browser address bar included in desktop images. Mobile file explicitly content-only."
+}

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, cite its exact release or commit."
+title: "Energy Evidence Review: Traceable Multi-role Review for Energy Documents"
+authors:
+  - family-names: Zhou
+    given-names: Quanxi
+version: 0.2.0
+date-released: 2026-10-28
+url: "https://github.com/SSCG3/energy-evidence-review"
+repository-code: "https://github.com/SSCG3/energy-evidence-review"
+license: MIT

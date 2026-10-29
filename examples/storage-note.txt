@@ -1,0 +1,5 @@
+Synthetic document for import testing.
+Storage capacity: 100 MWh.
+Rated power: 50 MW.
+Discharge duration: 2 hours.
+Operator: Example Energy Lab.

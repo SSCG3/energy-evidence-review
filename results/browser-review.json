@@ -1,0 +1,483 @@
+{
+  "question": "net summer generating capacity and net generation?",
+  "project": "eia-ca-2024",
+  "status": "supported",
+  "answer": "generation_capacity: 96773 MW\ngeneration: 214191383 MWh",
+  "citations": [
+    {
+      "source": "EIA-CA-2024",
+      "title": "EIA California Electricity Profile 2024",
+      "project": "eia-ca-2024",
+      "field": "generation_capacity",
+      "value": "96773 MW",
+      "normalized": "96773 MW",
+      "quote": "Net summer generating capacity: 96773 MW",
+      "start": 74,
+      "end": 114,
+      "line": 2,
+      "version": 1,
+      "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+      "data_kind": "public_eia"
+    },
+    {
+      "source": "EIA-CA-2024",
+      "title": "EIA California Electricity Profile 2024",
+      "project": "eia-ca-2024",
+      "field": "generation",
+      "value": "214191383 MWh",
+      "normalized": "214191383 MWh",
+      "quote": "Net generation: 214191383 MWh",
+      "start": 116,
+      "end": 145,
+      "line": 3,
+      "version": 1,
+      "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+      "data_kind": "public_eia"
+    }
+  ],
+  "decisions": [
+    {
+      "field": "generation_capacity",
+      "status": "supported",
+      "values": [
+        "96773 MW"
+      ],
+      "citations": [
+        {
+          "source": "EIA-CA-2024",
+          "title": "EIA California Electricity Profile 2024",
+          "project": "eia-ca-2024",
+          "field": "generation_capacity",
+          "value": "96773 MW",
+          "normalized": "96773 MW",
+          "quote": "Net summer generating capacity: 96773 MW",
+          "start": 74,
+          "end": 114,
+          "line": 2,
+          "version": 1,
+          "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+          "data_kind": "public_eia"
+        }
+      ],
+      "reason": "Visible claims agree after explicit supersession and unit normalization"
+    },
+    {
+      "field": "generation",
+      "status": "supported",
+      "values": [
+        "214191383 MWh"
+      ],
+      "citations": [
+        {
+          "source": "EIA-CA-2024",
+          "title": "EIA California Electricity Profile 2024",
+          "project": "eia-ca-2024",
+          "field": "generation",
+          "value": "214191383 MWh",
+          "normalized": "214191383 MWh",
+          "quote": "Net generation: 214191383 MWh",
+          "start": 116,
+          "end": 145,
+          "line": 3,
+          "version": 1,
+          "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+          "data_kind": "public_eia"
+        }
+      ],
+      "reason": "Visible claims agree after explicit supersession and unit normalization"
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "findings": [],
+    "scope": "Exact source spans and rule-based field decisions, not general semantic truth"
+  },
+  "mode": "checked",
+  "provider": "llm",
+  "field": null,
+  "corpus_sha256": "bd884750c481f0bc049545e210173a60ea7211b6e3762e32de6306760f87b50e",
+  "version": "0.2.0",
+  "run_id": "e687c094-93a4-4fef-8fd7-4049d1a14f2d",
+  "model_collaboration": {
+    "analyst": {
+      "claims": [
+        {
+          "text": "Net summer generating capacity is 96773 MW.",
+          "source_ids": [
+            "EIA-CA-2024"
+          ]
+        },
+        {
+          "text": "Net generation is 214191383 MWh.",
+          "source_ids": [
+            "EIA-CA-2024"
+          ]
+        }
+      ],
+      "limitations": [
+        "The evidence is limited to a single source (EIA-CA-2024) for the year 2024, so no cross-verification from other sources is available.",
+        "The geographic scope (presumably California) is implied by the source title but not explicitly stated in the provided evidence snippets.",
+        "The data represents a specific point in time (2024) and may not reflect current or historical values.",
+        "The 'supported' status indicates internal consistency within the provided structured data, but the underlying source data's reliability or methodology is not assessed."
+      ]
+    },
+    "reviewer": {
+      "verdict": "approve",
+      "issues": [],
+      "reason": "The analyst's claims are directly supported by the provided evidence. The values extracted (96773 MW for capacity and 214191383 MWh for generation) match the quotes from the EIA-CA-2024 source exactly. The analyst correctly identified the source and the specific fields. The limitations listed are reasonable given the constraints of the provided evidence."
+    },
+    "reporter": {
+      "note": "根据EIA-CA-2024数据，2024年加利福尼亚州净夏季发电容量为96773兆瓦，净发电量为214191383兆瓦时。数据来源单一，且为2024年特定时点数据，未进行跨来源验证。",
+      "needs_human_review": true
+    },
+    "usage": [
+      {
+        "role": "analyst",
+        "usage": {
+          "prompt_tokens": 682,
+          "completion_tokens": 200,
+          "total_tokens": 882,
+          "cost": 0.00025332,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00025332,
+            "upstream_inference_prompt_cost": 0.00017732,
+            "upstream_inference_completions_cost": 0.000076
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "model": "deepseek/deepseek-v3.2",
+        "response_id": "gen-1793238560-AtYFxjIDqGxwg23cv5P4",
+        "provider": "DeepInfra"
+      },
+      {
+        "role": "reviewer",
+        "usage": {
+          "prompt_tokens": 865,
+          "completion_tokens": 90,
+          "total_tokens": 955,
+          "cost": 0.0000883325,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0000883325,
+            "upstream_inference_prompt_cost": 0.0000523325,
+            "upstream_inference_completions_cost": 0.000036
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "model": "z-ai/glm-4.7-flash",
+        "response_id": "gen-1793238571-ZZ1c0ZxETgEyQFN0UV1R",
+        "provider": "Cloudflare"
+      },
+      {
+        "role": "reporter",
+        "usage": {
+          "prompt_tokens": 960,
+          "completion_tokens": 77,
+          "total_tokens": 1037,
+          "cost": 0.00027886,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00027886,
+            "upstream_inference_prompt_cost": 0.0002496,
+            "upstream_inference_completions_cost": 0.00002926
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "model": "deepseek/deepseek-v3.2",
+        "response_id": "gen-1793238573-gc9oxBYSNLSkxrJqDYK8",
+        "provider": "DeepInfra"
+      }
+    ],
+    "notice": "Model-role opinions remain unverified drafts; authoritative output is the structured evidence record."
+  },
+  "model_draft": "根据EIA-CA-2024数据，2024年加利福尼亚州净夏季发电容量为96773兆瓦，净发电量为214191383兆瓦时。数据来源单一，且为2024年特定时点数据，未进行跨来源验证。",
+  "trace": [
+    {
+      "id": 1,
+      "run_id": "e687c094-93a4-4fef-8fd7-4049d1a14f2d",
+      "timestamp": "2026-10-29T01:49:19.944568+00:00",
+      "sender": "user",
+      "receiver": "planner",
+      "type": "REQUEST",
+      "content": {
+        "question": "net summer generating capacity and net generation?",
+        "role": "public",
+        "project": "eia-ca-2024"
+      },
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "73d55ff2c5cda1a6dadfaa73a7cdf1555a3ca8cf73833a298b608cc30139426f"
+    },
+    {
+      "id": 2,
+      "run_id": "e687c094-93a4-4fef-8fd7-4049d1a14f2d",
+      "timestamp": "2026-10-29T01:49:19.944660+00:00",
+      "sender": "planner",
+      "receiver": "retriever",
+      "type": "HANDOFF",
+      "content": {
+        "question": "net summer generating capacity and net generation?",
+        "fields": [
+          "generation_capacity",
+          "generation"
+        ],
+        "requires_human": false,
+        "strategy": "retrieve -> extract -> reconcile -> verify -> report"
+      },
+      "previous_hash": "73d55ff2c5cda1a6dadfaa73a7cdf1555a3ca8cf73833a298b608cc30139426f",
+      "hash": "038b6422d9bfade59e266ed27966d7cb00530f089b004c2cd6c1007597c2a9d0"
+    },
+    {
+      "id": 3,
+      "run_id": "e687c094-93a4-4fef-8fd7-4049d1a14f2d",
+      "timestamp": "2026-10-29T01:49:19.945324+00:00",
+      "sender": "retriever",
+      "receiver": "extractor",
+      "type": "HANDOFF",
+      "content": {
+        "source_ids": [
+          "EIA-CA-2024"
+        ],
+        "requested_fields": [
+          "generation_capacity",
+          "generation"
+        ]
+      },
+      "previous_hash": "038b6422d9bfade59e266ed27966d7cb00530f089b004c2cd6c1007597c2a9d0",
+      "hash": "36ad38656643ebfb6dc78a8fa98bf646003bdba3cd6b4442614a4ed0c9c4d594"
+    },
+    {
+      "id": 4,
+      "run_id": "e687c094-93a4-4fef-8fd7-4049d1a14f2d",
+      "timestamp": "2026-10-29T01:49:19.945472+00:00",
+      "sender": "extractor",
+      "receiver": "reconciler",
+      "type": "HANDOFF",
+      "content": {
+        "claims": [
+          {
+            "source": "EIA-CA-2024",
+            "title": "EIA California Electricity Profile 2024",
+            "project": "eia-ca-2024",
+            "field": "generation_capacity",
+            "value": "96773 MW",
+            "normalized": "96773 MW",
+            "quote": "Net summer generating capacity: 96773 MW",
+            "start": 74,
+            "end": 114,
+            "line": 2,
+            "version": 1,
+            "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+            "data_kind": "public_eia"
+          },
+          {
+            "source": "EIA-CA-2024",
+            "title": "EIA California Electricity Profile 2024",
+            "project": "eia-ca-2024",
+            "field": "generation",
+            "value": "214191383 MWh",
+            "normalized": "214191383 MWh",
+            "quote": "Net generation: 214191383 MWh",
+            "start": 116,
+            "end": 145,
+            "line": 3,
+            "version": 1,
+            "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+            "data_kind": "public_eia"
+          }
+        ]
+      },
+      "previous_hash": "36ad38656643ebfb6dc78a8fa98bf646003bdba3cd6b4442614a4ed0c9c4d594",
+      "hash": "d8c3534d67a57b4cbbf6c91196dfc67d15b23def268fba5bc050345a77f00f14"
+    },
+    {
+      "id": 5,
+      "run_id": "e687c094-93a4-4fef-8fd7-4049d1a14f2d",
+      "timestamp": "2026-10-29T01:49:19.945537+00:00",
+      "sender": "reconciler",
+      "receiver": "verifier",
+      "type": "HANDOFF",
+      "content": {
+        "decisions": [
+          {
+            "field": "generation_capacity",
+            "status": "supported",
+            "values": [
+              "96773 MW"
+            ],
+            "citations": [
+              {
+                "source": "EIA-CA-2024",
+                "title": "EIA California Electricity Profile 2024",
+                "project": "eia-ca-2024",
+                "field": "generation_capacity",
+                "value": "96773 MW",
+                "normalized": "96773 MW",
+                "quote": "Net summer generating capacity: 96773 MW",
+                "start": 74,
+                "end": 114,
+                "line": 2,
+                "version": 1,
+                "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+                "data_kind": "public_eia"
+              }
+            ],
+            "reason": "Visible claims agree after explicit supersession and unit normalization"
+          },
+          {
+            "field": "generation",
+            "status": "supported",
+            "values": [
+              "214191383 MWh"
+            ],
+            "citations": [
+              {
+                "source": "EIA-CA-2024",
+                "title": "EIA California Electricity Profile 2024",
+                "project": "eia-ca-2024",
+                "field": "generation",
+                "value": "214191383 MWh",
+                "normalized": "214191383 MWh",
+                "quote": "Net generation: 214191383 MWh",
+                "start": 116,
+                "end": 145,
+                "line": 3,
+                "version": 1,
+                "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+                "data_kind": "public_eia"
+              }
+            ],
+            "reason": "Visible claims agree after explicit supersession and unit normalization"
+          }
+        ],
+        "mode": "checked"
+      },
+      "previous_hash": "d8c3534d67a57b4cbbf6c91196dfc67d15b23def268fba5bc050345a77f00f14",
+      "hash": "efbbf0522e9222089954d47d3c9d810fdd9297c3649d719f4c481ef6ffe37226"
+    },
+    {
+      "id": 6,
+      "run_id": "e687c094-93a4-4fef-8fd7-4049d1a14f2d",
+      "timestamp": "2026-10-29T01:49:19.945607+00:00",
+      "sender": "verifier",
+      "receiver": "reporter",
+      "type": "RESPONSE",
+      "content": {
+        "passed": true,
+        "findings": [],
+        "scope": "Exact source spans and rule-based field decisions, not general semantic truth"
+      },
+      "previous_hash": "efbbf0522e9222089954d47d3c9d810fdd9297c3649d719f4c481ef6ffe37226",
+      "hash": "5bfde5f9d8576c5c3536fdb14678eebacda75f3a25011b9144986862b061caab"
+    },
+    {
+      "id": 7,
+      "run_id": "e687c094-93a4-4fef-8fd7-4049d1a14f2d",
+      "timestamp": "2026-10-29T01:49:30.777335+00:00",
+      "sender": "model_analyst",
+      "receiver": "model_reviewer",
+      "type": "HANDOFF",
+      "content": {
+        "claims": [
+          {
+            "text": "Net summer generating capacity is 96773 MW.",
+            "source_ids": [
+              "EIA-CA-2024"
+            ]
+          },
+          {
+            "text": "Net generation is 214191383 MWh.",
+            "source_ids": [
+              "EIA-CA-2024"
+            ]
+          }
+        ],
+        "limitations": [
+          "The evidence is limited to a single source (EIA-CA-2024) for the year 2024, so no cross-verification from other sources is available.",
+          "The geographic scope (presumably California) is implied by the source title but not explicitly stated in the provided evidence snippets.",
+          "The data represents a specific point in time (2024) and may not reflect current or historical values.",
+          "The 'supported' status indicates internal consistency within the provided structured data, but the underlying source data's reliability or methodology is not assessed."
+        ]
+      },
+      "previous_hash": "5bfde5f9d8576c5c3536fdb14678eebacda75f3a25011b9144986862b061caab",
+      "hash": "ab6b2bcb67fa699ddf11db00b667f6cab97bd960e15691a8f6857940388a0f63"
+    },
+    {
+      "id": 8,
+      "run_id": "e687c094-93a4-4fef-8fd7-4049d1a14f2d",
+      "timestamp": "2026-10-29T01:49:32.823607+00:00",
+      "sender": "model_reviewer",
+      "receiver": "model_reporter",
+      "type": "HANDOFF",
+      "content": {
+        "verdict": "approve",
+        "issues": [],
+        "reason": "The analyst's claims are directly supported by the provided evidence. The values extracted (96773 MW for capacity and 214191383 MWh for generation) match the quotes from the EIA-CA-2024 source exactly. The analyst correctly identified the source and the specific fields. The limitations listed are reasonable given the constraints of the provided evidence."
+      },
+      "previous_hash": "ab6b2bcb67fa699ddf11db00b667f6cab97bd960e15691a8f6857940388a0f63",
+      "hash": "8467694f696eec0689686360c55cfaf91d9cbeb9b1ac4cbc0d313ddc7d3a0e78"
+    },
+    {
+      "id": 9,
+      "run_id": "e687c094-93a4-4fef-8fd7-4049d1a14f2d",
+      "timestamp": "2026-10-29T01:49:35.995748+00:00",
+      "sender": "model_reporter",
+      "receiver": "human",
+      "type": "RESPONSE",
+      "content": {
+        "note": "根据EIA-CA-2024数据，2024年加利福尼亚州净夏季发电容量为96773兆瓦，净发电量为214191383兆瓦时。数据来源单一，且为2024年特定时点数据，未进行跨来源验证。",
+        "needs_human_review": true
+      },
+      "previous_hash": "8467694f696eec0689686360c55cfaf91d9cbeb9b1ac4cbc0d313ddc7d3a0e78",
+      "hash": "7636833025deb9d037d0f118f6ab52a73b239c2ffc83a39402c9f187437f7b40"
+    },
+    {
+      "id": 10,
+      "run_id": "e687c094-93a4-4fef-8fd7-4049d1a14f2d",
+      "timestamp": "2026-10-29T01:49:35.996336+00:00",
+      "sender": "reporter",
+      "receiver": "human",
+      "type": "RESPONSE",
+      "content": {
+        "status": "supported",
+        "answer": "generation_capacity: 96773 MW\ngeneration: 214191383 MWh",
+        "requires_human": false,
+        "result_hash": "10d0c88c1c1dfcfe7307f8d61eced9ba4b7ad7a16d6491c5dc54d6f4227bb050"
+      },
+      "previous_hash": "7636833025deb9d037d0f118f6ab52a73b239c2ffc83a39402c9f187437f7b40",
+      "hash": "afe1bdaf35e0184bf0567ddb409210ece4749012c668c4c87119f8821b86d38b"
+    }
+  ],
+  "trace_valid": true,
+  "elapsed_ms": 16052.367
+}

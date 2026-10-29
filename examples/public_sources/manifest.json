@@ -1,0 +1,19 @@
+{
+  "publisher": "U.S. Energy Information Administration",
+  "dataset": "State Electricity Profiles / Table 1 Summary",
+  "description": "State rankings for key electricity statistics by state\n    Source: Forms EIA-860, EIA-861, EIA-923\n    Product: State Electricity Profiles, Table 1",
+  "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+  "retrieved_at": "2026-10-29T01:41:22.790821+00:00",
+  "raw_sha256": "f15577c5994973147dcefd05cccd0365ff9811d700eecb80caeb129744f2f3ab",
+  "raw_file": "eia_state_profiles_2024.json",
+  "period": "2024",
+  "states": [
+    "CA",
+    "NY",
+    "TX"
+  ],
+  "row_count": 3,
+  "reuse_reference": "https://www.eia.gov/about/copyrights_reuse.php",
+  "transformation": "Select three fields and retain their exact API values; units and scope explicitly stated. Corpus is a local text adapter, not an EIA-authored narrative.",
+  "limitations": "Small public slice selected during development; not independently selected or held out. No operational or external-adoption claim."
+}

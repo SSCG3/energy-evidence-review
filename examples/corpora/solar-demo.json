@@ -1,0 +1,19 @@
+[
+  {
+    "id": "PV-01",
+    "title": "光储园区 · 初始方案",
+    "project": "solar-demo",
+    "version": 1,
+    "access": "public",
+    "text": "Synthetic solar-plus-storage campus.\nStorage capacity: 50000 kWh.\nRated power: 25000 kW.\nOperator: Example Campus Energy Team."
+  },
+  {
+    "id": "PV-02",
+    "title": "光储园区 · 明确修订方案",
+    "project": "solar-demo",
+    "version": 2,
+    "supersedes": "PV-01",
+    "access": "public",
+    "text": "This synthetic revision supersedes PV-01 for stated fields.\nStorage capacity: 60 MWh.\nRated power: 30 MW."
+  }
+]

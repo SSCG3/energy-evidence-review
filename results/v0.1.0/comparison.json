@@ -1,0 +1,3420 @@
+{
+  "generated_at": "2026-10-29T01:24:13.942829+00:00",
+  "python": "3.12.3",
+  "provider": "offline",
+  "limitations": "Synthetic structured-field suite; authored during development, not a blinded held-out benchmark. No LLM or production claims.",
+  "suite_sha256": "e060bd599e83c719eb32cdec55d11d4d1ff4551d77861ff8872183e66a04a6f3",
+  "engine_sha256": "3eb0d12e7c38b347205f7f49e0b907649a5222552c81cf3f2c696906f8b04455",
+  "metrics": {
+    "baseline": {
+      "passed": 12,
+      "total": 20
+    },
+    "checked": {
+      "passed": 20,
+      "total": 20
+    }
+  },
+  "runs": [
+    {
+      "id": "0-answerable",
+      "category": "answerable",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "100 MWh",
+        "citations": [
+          {
+            "source": "0A",
+            "title": "Synthetic project 0",
+            "line": 1,
+            "quote": "capacity = 100 MWh",
+            "value": "100 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量是多少？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941178+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941409+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941417+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "100 MWh",
+              "citations": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.259,
+        "corpus_sha256": "ca66e991888ff21c9d8391a353de15b5a76a518fbdefe25ac9fa8b225fffc385",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "0-answerable",
+      "category": "answerable",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "100 MWh",
+        "citations": [
+          {
+            "source": "0A",
+            "title": "Synthetic project 0",
+            "line": 1,
+            "quote": "capacity = 100 MWh",
+            "value": "100 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量是多少？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941500+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941513+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941521+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "100 MWh",
+              "citations": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.941526+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "supported",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.035,
+        "corpus_sha256": "ca66e991888ff21c9d8391a353de15b5a76a518fbdefe25ac9fa8b225fffc385",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "0-missing",
+      "category": "missing",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "投资额是多少？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941560+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "投资额是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941567+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941570+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          }
+        ],
+        "elapsed_ms": 0.017,
+        "corpus_sha256": "ca66e991888ff21c9d8391a353de15b5a76a518fbdefe25ac9fa8b225fffc385",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "0-missing",
+      "category": "missing",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "投资额是多少？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941593+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "投资额是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941599+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941602+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.941606+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "insufficient",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.018,
+        "corpus_sha256": "ca66e991888ff21c9d8391a353de15b5a76a518fbdefe25ac9fa8b225fffc385",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "0-conflict",
+      "category": "conflict",
+      "mode": "baseline",
+      "status_ok": false,
+      "evidence_ok": false,
+      "value_ok": false,
+      "pass": false,
+      "result": {
+        "status": "supported",
+        "answer": "100 MWh",
+        "citations": [
+          {
+            "source": "0A",
+            "title": "Synthetic project 0",
+            "line": 1,
+            "quote": "capacity = 100 MWh",
+            "value": "100 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "capacity?",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941625+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "capacity?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941638+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "0B",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 120 MWh",
+                  "value": "120 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941641+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "100 MWh",
+              "citations": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.02,
+        "corpus_sha256": "d644021fe7e6ee7ebf6e3688d984f0aa24907212b259e3d8065bd5e00d5493d5",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "0-conflict",
+      "category": "conflict",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "conflict",
+        "answer": "资料存在冲突，请人工确认：100 MWh / 120 MWh",
+        "citations": [
+          {
+            "source": "0A",
+            "title": "Synthetic project 0",
+            "line": 1,
+            "quote": "capacity = 100 MWh",
+            "value": "100 MWh",
+            "version": 1,
+            "supersedes": null
+          },
+          {
+            "source": "0B",
+            "title": "Synthetic project 0",
+            "line": 1,
+            "quote": "capacity = 120 MWh",
+            "value": "120 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "capacity?",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941666+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "capacity?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941674+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "0B",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 120 MWh",
+                  "value": "120 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941677+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "100 MWh",
+              "citations": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.941685+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "conflict",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.026,
+        "corpus_sha256": "d644021fe7e6ee7ebf6e3688d984f0aa24907212b259e3d8065bd5e00d5493d5",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "0-superseded",
+      "category": "superseded",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": false,
+      "value_ok": false,
+      "pass": false,
+      "result": {
+        "status": "supported",
+        "answer": "100 MWh",
+        "citations": [
+          {
+            "source": "0A",
+            "title": "Synthetic project 0",
+            "line": 1,
+            "quote": "capacity = 100 MWh",
+            "value": "100 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941710+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941718+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "0B",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 120 MWh",
+                  "value": "120 MWh",
+                  "version": 2,
+                  "supersedes": "0A"
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941721+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "100 MWh",
+              "citations": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.015,
+        "corpus_sha256": "0dee141009d9e25f8188e76bd97f2dee9538a6256ed890123df636995a1cb730",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "0-superseded",
+      "category": "superseded",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "120 MWh",
+        "citations": [
+          {
+            "source": "0B",
+            "title": "Synthetic project 0",
+            "line": 1,
+            "quote": "capacity = 120 MWh",
+            "value": "120 MWh",
+            "version": 2,
+            "supersedes": "0A"
+          }
+        ],
+        "question": "容量？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941742+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941754+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "0B",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 120 MWh",
+                  "value": "120 MWh",
+                  "version": 2,
+                  "supersedes": "0A"
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941757+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "100 MWh",
+              "citations": [
+                {
+                  "source": "0A",
+                  "title": "Synthetic project 0",
+                  "line": 1,
+                  "quote": "capacity = 100 MWh",
+                  "value": "100 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.941762+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "supported",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.023,
+        "corpus_sha256": "0dee141009d9e25f8188e76bd97f2dee9538a6256ed890123df636995a1cb730",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "0-permission",
+      "category": "permission",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "investment?",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941784+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "investment?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941787+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941789+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          }
+        ],
+        "elapsed_ms": 0.011,
+        "corpus_sha256": "5955b5b03ec98a31d5e6eb57b34daa6ec078a3ba4920bc571d136e776f5ae433",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "0-permission",
+      "category": "permission",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "investment?",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941806+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "investment?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941809+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941812+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.941818+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "insufficient",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.017,
+        "corpus_sha256": "5955b5b03ec98a31d5e6eb57b34daa6ec078a3ba4920bc571d136e776f5ae433",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "1-answerable",
+      "category": "answerable",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "101 MWh",
+        "citations": [
+          {
+            "source": "1A",
+            "title": "Synthetic project 1",
+            "line": 1,
+            "quote": "capacity = 101 MWh",
+            "value": "101 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量是多少？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941841+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941847+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941850+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "101 MWh",
+              "citations": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.013,
+        "corpus_sha256": "b8ac746fb48e6e29ac651a0a78dbd14306e6b8951e12209b2a9dc9030e7ee4d5",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "1-answerable",
+      "category": "answerable",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "101 MWh",
+        "citations": [
+          {
+            "source": "1A",
+            "title": "Synthetic project 1",
+            "line": 1,
+            "quote": "capacity = 101 MWh",
+            "value": "101 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量是多少？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941870+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941876+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941879+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "101 MWh",
+              "citations": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.941882+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "supported",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.016,
+        "corpus_sha256": "b8ac746fb48e6e29ac651a0a78dbd14306e6b8951e12209b2a9dc9030e7ee4d5",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "1-missing",
+      "category": "missing",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "投资额是多少？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941900+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "投资额是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941905+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941908+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          }
+        ],
+        "elapsed_ms": 0.013,
+        "corpus_sha256": "b8ac746fb48e6e29ac651a0a78dbd14306e6b8951e12209b2a9dc9030e7ee4d5",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "1-missing",
+      "category": "missing",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "投资额是多少？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941927+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "投资额是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941932+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941948+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.941955+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "insufficient",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.036,
+        "corpus_sha256": "b8ac746fb48e6e29ac651a0a78dbd14306e6b8951e12209b2a9dc9030e7ee4d5",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "1-conflict",
+      "category": "conflict",
+      "mode": "baseline",
+      "status_ok": false,
+      "evidence_ok": false,
+      "value_ok": false,
+      "pass": false,
+      "result": {
+        "status": "supported",
+        "answer": "101 MWh",
+        "citations": [
+          {
+            "source": "1A",
+            "title": "Synthetic project 1",
+            "line": 1,
+            "quote": "capacity = 101 MWh",
+            "value": "101 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "capacity?",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.941972+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "capacity?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.941980+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "1B",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 121 MWh",
+                  "value": "121 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.941982+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "101 MWh",
+              "citations": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.018,
+        "corpus_sha256": "fe30536cff02391f9c273fac4826cfad7f4aed46f7d9502ac10b5fc4c1f8cfd2",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "1-conflict",
+      "category": "conflict",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "conflict",
+        "answer": "资料存在冲突，请人工确认：101 MWh / 121 MWh",
+        "citations": [
+          {
+            "source": "1A",
+            "title": "Synthetic project 1",
+            "line": 1,
+            "quote": "capacity = 101 MWh",
+            "value": "101 MWh",
+            "version": 1,
+            "supersedes": null
+          },
+          {
+            "source": "1B",
+            "title": "Synthetic project 1",
+            "line": 1,
+            "quote": "capacity = 121 MWh",
+            "value": "121 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "capacity?",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942007+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "capacity?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942015+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "1B",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 121 MWh",
+                  "value": "121 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942017+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "101 MWh",
+              "citations": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942026+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "conflict",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.023,
+        "corpus_sha256": "fe30536cff02391f9c273fac4826cfad7f4aed46f7d9502ac10b5fc4c1f8cfd2",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "1-superseded",
+      "category": "superseded",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": false,
+      "value_ok": false,
+      "pass": false,
+      "result": {
+        "status": "supported",
+        "answer": "101 MWh",
+        "citations": [
+          {
+            "source": "1A",
+            "title": "Synthetic project 1",
+            "line": 1,
+            "quote": "capacity = 101 MWh",
+            "value": "101 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942045+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942053+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "1B",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 121 MWh",
+                  "value": "121 MWh",
+                  "version": 2,
+                  "supersedes": "1A"
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942056+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "101 MWh",
+              "citations": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.015,
+        "corpus_sha256": "031043385a274774ba41671caeb476c16f97b97b80a27aec3d7a83ff9e5bbd7b",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "1-superseded",
+      "category": "superseded",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "121 MWh",
+        "citations": [
+          {
+            "source": "1B",
+            "title": "Synthetic project 1",
+            "line": 1,
+            "quote": "capacity = 121 MWh",
+            "value": "121 MWh",
+            "version": 2,
+            "supersedes": "1A"
+          }
+        ],
+        "question": "容量？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942075+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942082+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "1B",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 121 MWh",
+                  "value": "121 MWh",
+                  "version": 2,
+                  "supersedes": "1A"
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942088+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "101 MWh",
+              "citations": [
+                {
+                  "source": "1A",
+                  "title": "Synthetic project 1",
+                  "line": 1,
+                  "quote": "capacity = 101 MWh",
+                  "value": "101 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942095+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "supported",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.024,
+        "corpus_sha256": "031043385a274774ba41671caeb476c16f97b97b80a27aec3d7a83ff9e5bbd7b",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "1-permission",
+      "category": "permission",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "investment?",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942114+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "investment?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942117+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942120+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          }
+        ],
+        "elapsed_ms": 0.011,
+        "corpus_sha256": "1e642f447eff5382cd45896fa61115a13469372672510e7a7ee9bb236a0d1ecd",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "1-permission",
+      "category": "permission",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "investment?",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942138+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "investment?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942141+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942144+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942147+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "insufficient",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.013,
+        "corpus_sha256": "1e642f447eff5382cd45896fa61115a13469372672510e7a7ee9bb236a0d1ecd",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "2-answerable",
+      "category": "answerable",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "102 MWh",
+        "citations": [
+          {
+            "source": "2A",
+            "title": "Synthetic project 2",
+            "line": 1,
+            "quote": "capacity = 102 MWh",
+            "value": "102 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量是多少？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942161+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942167+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942170+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "102 MWh",
+              "citations": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.012,
+        "corpus_sha256": "0b51900814b938b3dad7117c78971792313f5c551f64ddfda9affe00278b80c9",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "2-answerable",
+      "category": "answerable",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "102 MWh",
+        "citations": [
+          {
+            "source": "2A",
+            "title": "Synthetic project 2",
+            "line": 1,
+            "quote": "capacity = 102 MWh",
+            "value": "102 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量是多少？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942185+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942190+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942196+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "102 MWh",
+              "citations": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942203+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "supported",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.022,
+        "corpus_sha256": "0b51900814b938b3dad7117c78971792313f5c551f64ddfda9affe00278b80c9",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "2-missing",
+      "category": "missing",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "投资额是多少？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942219+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "投资额是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942224+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942227+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          }
+        ],
+        "elapsed_ms": 0.013,
+        "corpus_sha256": "0b51900814b938b3dad7117c78971792313f5c551f64ddfda9affe00278b80c9",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "2-missing",
+      "category": "missing",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "投资额是多少？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942242+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "投资额是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942247+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942249+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942252+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "insufficient",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.014,
+        "corpus_sha256": "0b51900814b938b3dad7117c78971792313f5c551f64ddfda9affe00278b80c9",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "2-conflict",
+      "category": "conflict",
+      "mode": "baseline",
+      "status_ok": false,
+      "evidence_ok": false,
+      "value_ok": false,
+      "pass": false,
+      "result": {
+        "status": "supported",
+        "answer": "102 MWh",
+        "citations": [
+          {
+            "source": "2A",
+            "title": "Synthetic project 2",
+            "line": 1,
+            "quote": "capacity = 102 MWh",
+            "value": "102 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "capacity?",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942266+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "capacity?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942274+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "2B",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 122 MWh",
+                  "value": "122 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942276+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "102 MWh",
+              "citations": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.014,
+        "corpus_sha256": "6877b3bda06afc5dc3dcc5861e15b559908bedda3fbc7845b112473bc2a36010",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "2-conflict",
+      "category": "conflict",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "conflict",
+        "answer": "资料存在冲突，请人工确认：102 MWh / 122 MWh",
+        "citations": [
+          {
+            "source": "2A",
+            "title": "Synthetic project 2",
+            "line": 1,
+            "quote": "capacity = 102 MWh",
+            "value": "102 MWh",
+            "version": 1,
+            "supersedes": null
+          },
+          {
+            "source": "2B",
+            "title": "Synthetic project 2",
+            "line": 1,
+            "quote": "capacity = 122 MWh",
+            "value": "122 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "capacity?",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942296+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "capacity?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942310+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "2B",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 122 MWh",
+                  "value": "122 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942317+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "102 MWh",
+              "citations": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942322+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "conflict",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.029,
+        "corpus_sha256": "6877b3bda06afc5dc3dcc5861e15b559908bedda3fbc7845b112473bc2a36010",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "2-superseded",
+      "category": "superseded",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": false,
+      "value_ok": false,
+      "pass": false,
+      "result": {
+        "status": "supported",
+        "answer": "102 MWh",
+        "citations": [
+          {
+            "source": "2A",
+            "title": "Synthetic project 2",
+            "line": 1,
+            "quote": "capacity = 102 MWh",
+            "value": "102 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942350+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942358+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "2B",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 122 MWh",
+                  "value": "122 MWh",
+                  "version": 2,
+                  "supersedes": "2A"
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942361+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "102 MWh",
+              "citations": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.015,
+        "corpus_sha256": "3827283a61fb146981d9519efec1264b94ac05e9c5edc947db360bd260bb05a2",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "2-superseded",
+      "category": "superseded",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "122 MWh",
+        "citations": [
+          {
+            "source": "2B",
+            "title": "Synthetic project 2",
+            "line": 1,
+            "quote": "capacity = 122 MWh",
+            "value": "122 MWh",
+            "version": 2,
+            "supersedes": "2A"
+          }
+        ],
+        "question": "容量？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942379+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942387+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "2B",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 122 MWh",
+                  "value": "122 MWh",
+                  "version": 2,
+                  "supersedes": "2A"
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942389+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "102 MWh",
+              "citations": [
+                {
+                  "source": "2A",
+                  "title": "Synthetic project 2",
+                  "line": 1,
+                  "quote": "capacity = 102 MWh",
+                  "value": "102 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942396+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "supported",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.021,
+        "corpus_sha256": "3827283a61fb146981d9519efec1264b94ac05e9c5edc947db360bd260bb05a2",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "2-permission",
+      "category": "permission",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "investment?",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942482+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "investment?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942485+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942491+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          }
+        ],
+        "elapsed_ms": 0.015,
+        "corpus_sha256": "c2bcbdf0157b992a14295092cb815ef44ae44a2d9df2760e21cf91a532d95c1e",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "2-permission",
+      "category": "permission",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "investment?",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942512+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "investment?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942515+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942518+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942521+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "insufficient",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.013,
+        "corpus_sha256": "c2bcbdf0157b992a14295092cb815ef44ae44a2d9df2760e21cf91a532d95c1e",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "3-answerable",
+      "category": "answerable",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "103 MWh",
+        "citations": [
+          {
+            "source": "3A",
+            "title": "Synthetic project 3",
+            "line": 1,
+            "quote": "capacity = 103 MWh",
+            "value": "103 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量是多少？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942536+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942543+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942546+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "103 MWh",
+              "citations": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.014,
+        "corpus_sha256": "ca4391d443f6e7480281b6804e07b74796ffe056d0042ccc8431c98598ef077d",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "3-answerable",
+      "category": "answerable",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "103 MWh",
+        "citations": [
+          {
+            "source": "3A",
+            "title": "Synthetic project 3",
+            "line": 1,
+            "quote": "capacity = 103 MWh",
+            "value": "103 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量是多少？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942561+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942566+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942569+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "103 MWh",
+              "citations": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942572+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "supported",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.015,
+        "corpus_sha256": "ca4391d443f6e7480281b6804e07b74796ffe056d0042ccc8431c98598ef077d",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "3-missing",
+      "category": "missing",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "投资额是多少？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942588+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "投资额是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942597+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942599+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          }
+        ],
+        "elapsed_ms": 0.016,
+        "corpus_sha256": "ca4391d443f6e7480281b6804e07b74796ffe056d0042ccc8431c98598ef077d",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "3-missing",
+      "category": "missing",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "投资额是多少？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942618+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "投资额是多少？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942623+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942626+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942629+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "insufficient",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.015,
+        "corpus_sha256": "ca4391d443f6e7480281b6804e07b74796ffe056d0042ccc8431c98598ef077d",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "3-conflict",
+      "category": "conflict",
+      "mode": "baseline",
+      "status_ok": false,
+      "evidence_ok": false,
+      "value_ok": false,
+      "pass": false,
+      "result": {
+        "status": "supported",
+        "answer": "103 MWh",
+        "citations": [
+          {
+            "source": "3A",
+            "title": "Synthetic project 3",
+            "line": 1,
+            "quote": "capacity = 103 MWh",
+            "value": "103 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "capacity?",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942647+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "capacity?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942655+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "3B",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 123 MWh",
+                  "value": "123 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942657+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "103 MWh",
+              "citations": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.015,
+        "corpus_sha256": "17b7d8b8b4ee63463dd22e07c94abc53ad905ce69f4b1cf6f7453cc09bbf1707",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "3-conflict",
+      "category": "conflict",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "conflict",
+        "answer": "资料存在冲突，请人工确认：103 MWh / 123 MWh",
+        "citations": [
+          {
+            "source": "3A",
+            "title": "Synthetic project 3",
+            "line": 1,
+            "quote": "capacity = 103 MWh",
+            "value": "103 MWh",
+            "version": 1,
+            "supersedes": null
+          },
+          {
+            "source": "3B",
+            "title": "Synthetic project 3",
+            "line": 1,
+            "quote": "capacity = 123 MWh",
+            "value": "123 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "capacity?",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942678+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "capacity?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942685+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "3B",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 123 MWh",
+                  "value": "123 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942687+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "103 MWh",
+              "citations": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942692+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "conflict",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.021,
+        "corpus_sha256": "17b7d8b8b4ee63463dd22e07c94abc53ad905ce69f4b1cf6f7453cc09bbf1707",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "3-superseded",
+      "category": "superseded",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": false,
+      "value_ok": false,
+      "pass": false,
+      "result": {
+        "status": "supported",
+        "answer": "103 MWh",
+        "citations": [
+          {
+            "source": "3A",
+            "title": "Synthetic project 3",
+            "line": 1,
+            "quote": "capacity = 103 MWh",
+            "value": "103 MWh",
+            "version": 1,
+            "supersedes": null
+          }
+        ],
+        "question": "容量？",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942713+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942721+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "3B",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 123 MWh",
+                  "value": "123 MWh",
+                  "version": 2,
+                  "supersedes": "3A"
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942723+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "103 MWh",
+              "citations": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          }
+        ],
+        "elapsed_ms": 0.014,
+        "corpus_sha256": "96c1a3c074af2ce98270e296ebcda2cec13dfbdfc5e712edce163181e4c31570",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "3-superseded",
+      "category": "superseded",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "supported",
+        "answer": "123 MWh",
+        "citations": [
+          {
+            "source": "3B",
+            "title": "Synthetic project 3",
+            "line": 1,
+            "quote": "capacity = 123 MWh",
+            "value": "123 MWh",
+            "version": 2,
+            "supersedes": "3A"
+          }
+        ],
+        "question": "容量？",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "capacity",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942744+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "容量？",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942752+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "capacity",
+              "passages": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                },
+                {
+                  "source": "3B",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 123 MWh",
+                  "value": "123 MWh",
+                  "version": 2,
+                  "supersedes": "3A"
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942754+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "supported",
+              "answer": "103 MWh",
+              "citations": [
+                {
+                  "source": "3A",
+                  "title": "Synthetic project 3",
+                  "line": 1,
+                  "quote": "capacity = 103 MWh",
+                  "value": "103 MWh",
+                  "version": 1,
+                  "supersedes": null
+                }
+              ]
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942758+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "supported",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.017,
+        "corpus_sha256": "96c1a3c074af2ce98270e296ebcda2cec13dfbdfc5e712edce163181e4c31570",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "3-permission",
+      "category": "permission",
+      "mode": "baseline",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "investment?",
+        "mode": "baseline",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942777+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "investment?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942779+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942782+00:00",
+            "sender": "writer",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          }
+        ],
+        "elapsed_ms": 0.01,
+        "corpus_sha256": "5519e7e59d8045dcc2d685a8f98ba5980b8c7b67fc978ab12679d2190e124984",
+        "version": "0.1.0"
+      }
+    },
+    {
+      "id": "3-permission",
+      "category": "permission",
+      "mode": "checked",
+      "status_ok": true,
+      "evidence_ok": true,
+      "value_ok": true,
+      "pass": true,
+      "result": {
+        "status": "insufficient",
+        "answer": "资料中未找到可支持的答案。",
+        "citations": [],
+        "question": "investment?",
+        "mode": "checked",
+        "provider": "offline",
+        "field": "investment",
+        "trace": [
+          {
+            "id": 1,
+            "timestamp": "2026-10-29T01:24:13.942797+00:00",
+            "sender": "user",
+            "receiver": "retriever",
+            "type": "REQUEST",
+            "content": {
+              "question": "investment?",
+              "role": "public"
+            }
+          },
+          {
+            "id": 2,
+            "timestamp": "2026-10-29T01:24:13.942803+00:00",
+            "sender": "retriever",
+            "receiver": "writer",
+            "type": "HANDOFF",
+            "content": {
+              "field": "investment",
+              "passages": []
+            }
+          },
+          {
+            "id": 3,
+            "timestamp": "2026-10-29T01:24:13.942805+00:00",
+            "sender": "writer",
+            "receiver": "checker",
+            "type": "RESPONSE",
+            "content": {
+              "status": "insufficient",
+              "answer": "资料中未找到可支持的答案。",
+              "citations": []
+            }
+          },
+          {
+            "id": 4,
+            "timestamp": "2026-10-29T01:24:13.942808+00:00",
+            "sender": "checker",
+            "receiver": "user",
+            "type": "RESPONSE",
+            "content": {
+              "decision": "insufficient",
+              "reason": "检查可见资料中的同字段值及明确的替代关系；不进行通用语义真实性验证。"
+            }
+          }
+        ],
+        "elapsed_ms": 0.016,
+        "corpus_sha256": "5519e7e59d8045dcc2d685a8f98ba5980b8c7b67fc978ab12679d2190e124984",
+        "version": "0.1.0"
+      }
+    }
+  ]
+}

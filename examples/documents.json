@@ -1,0 +1,73 @@
+[
+  {
+    "id": "ST-01",
+    "title": "示例储能站 · 工程概况",
+    "project": "storage-demo",
+    "version": 1,
+    "access": "public",
+    "text": "本文件为合成演示资料，不代表真实项目。\n储能容量为100 MWh。\n额定功率为50 MW。\n放电时长为2小时。\n运营方：示例能源技术中心。"
+  },
+  {
+    "id": "ST-02",
+    "title": "示例储能站 · 待核技术记录",
+    "project": "storage-demo",
+    "version": 1,
+    "access": "public",
+    "text": "本记录未声明替代工程概况。\nStorage capacity: 120 MWh.\nRated power: 50000 kW.\nDischarge duration: 120 minutes."
+  },
+  {
+    "id": "ST-03",
+    "title": "示例储能站 · 内部预算模拟",
+    "project": "storage-demo",
+    "version": 1,
+    "access": "internal",
+    "text": "以下为模拟内部资料。\nInvestment: 280 million CNY."
+  },
+  {
+    "id": "PV-01",
+    "title": "光储园区 · 初始方案",
+    "project": "solar-demo",
+    "version": 1,
+    "access": "public",
+    "text": "Synthetic solar-plus-storage campus.\nStorage capacity: 50000 kWh.\nRated power: 25000 kW.\nOperator: Example Campus Energy Team."
+  },
+  {
+    "id": "PV-02",
+    "title": "光储园区 · 明确修订方案",
+    "project": "solar-demo",
+    "version": 2,
+    "supersedes": "PV-01",
+    "access": "public",
+    "text": "This synthetic revision supersedes PV-01 for stated fields.\nStorage capacity: 60 MWh.\nRated power: 30 MW."
+  },
+  {
+    "id": "EIA-CA-2024",
+    "title": "EIA California Electricity Profile 2024",
+    "project": "eia-ca-2024",
+    "version": 1,
+    "access": "public",
+    "data_kind": "public_eia",
+    "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+    "text": "EIA State Electricity Profiles, Table 1. State: California. Period: 2024.\nNet summer generating capacity: 96773 MW.\nNet generation: 214191383 MWh.\nAverage retail price: 27.04 cents/kWh.\nScope: all sectors; state-level generating capacity, not battery storage capacity. Values transformed verbatim from the downloaded EIA API row."
+  },
+  {
+    "id": "EIA-NY-2024",
+    "title": "EIA New York Electricity Profile 2024",
+    "project": "eia-ny-2024",
+    "version": 1,
+    "access": "public",
+    "data_kind": "public_eia",
+    "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+    "text": "EIA State Electricity Profiles, Table 1. State: New York. Period: 2024.\nNet summer generating capacity: 41288 MW.\nNet generation: 129015493 MWh.\nAverage retail price: 19.66 cents/kWh.\nScope: all sectors; state-level generating capacity, not battery storage capacity. Values transformed verbatim from the downloaded EIA API row."
+  },
+  {
+    "id": "EIA-TX-2024",
+    "title": "EIA Texas Electricity Profile 2024",
+    "project": "eia-tx-2024",
+    "version": 1,
+    "access": "public",
+    "data_kind": "public_eia",
+    "source_url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/summary/data/?api_key=DEMO_KEY&frequency=annual&start=2024&end=2024&length=20&data%5B%5D=net-summer-capacity&data%5B%5D=net-generation&data%5B%5D=average-retail-price&facets%5BstateID%5D%5B%5D=CA&facets%5BstateID%5D%5B%5D=TX&facets%5BstateID%5D%5B%5D=NY",
+    "text": "EIA State Electricity Profiles, Table 1. State: Texas. Period: 2024.\nNet summer generating capacity: 168317 MW.\nNet generation: 566502688 MWh.\nAverage retail price: 9.79 cents/kWh.\nScope: all sectors; state-level generating capacity, not battery storage capacity. Values transformed verbatim from the downloaded EIA API row."
+  }
+]

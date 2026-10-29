@@ -1,0 +1,1038 @@
+[
+  {
+    "id": "0-fact",
+    "category": "answerable",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 100 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "容量是多少？",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "100 MWh"
+    ]
+  },
+  {
+    "id": "0-missing",
+    "category": "missing",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 100 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "investment?",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  },
+  {
+    "id": "0-conflict",
+    "category": "conflict",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 100 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为120 MWh。",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "storage capacity?",
+    "role": "public",
+    "expected_status": "conflict",
+    "expected_sources": [
+      "a",
+      "b"
+    ],
+    "expected_values": [
+      "100 MWh",
+      "120 MWh"
+    ]
+  },
+  {
+    "id": "0-revision",
+    "category": "supersession",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 100 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为120 MWh。",
+        "project": "eval",
+        "access": "public",
+        "version": 2,
+        "supersedes": "a"
+      }
+    ],
+    "question": "容量？",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "b"
+    ],
+    "expected_values": [
+      "120 MWh"
+    ]
+  },
+  {
+    "id": "0-units",
+    "category": "equivalent_units",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 100 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "容量为100000 kWh。",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a",
+      "b"
+    ],
+    "expected_values": [
+      "100 MWh"
+    ]
+  },
+  {
+    "id": "0-joined",
+    "category": "cross_document_fields",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 100 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "p",
+        "title": "Synthetic p",
+        "text": "Rated power: 50 MW.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity and power?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a",
+      "p"
+    ],
+    "expected_values": [
+      "100 MWh",
+      "50 MW"
+    ]
+  },
+  {
+    "id": "0-access",
+    "category": "restricted_missing",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 100 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "s",
+        "title": "Synthetic s",
+        "text": "Investment: 100 million CNY.",
+        "project": "eval",
+        "access": "internal"
+      }
+    ],
+    "question": "投资额？",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  },
+  {
+    "id": "0-partial",
+    "category": "partial_answer",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 100 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity and investment?",
+    "role": "public",
+    "expected_status": "partial",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "100 MWh"
+    ]
+  },
+  {
+    "id": "0-hidden-revision",
+    "category": "restricted_revision",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 100 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为120 MWh。",
+        "project": "eval",
+        "access": "internal",
+        "version": 2,
+        "supersedes": "a"
+      }
+    ],
+    "question": "capacity?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "100 MWh"
+    ]
+  },
+  {
+    "id": "0-unknown",
+    "category": "unsupported_question",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 100 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "What is the supplier telephone number?",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  },
+  {
+    "id": "1-fact",
+    "category": "answerable",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 110 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "容量是多少？",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "110 MWh"
+    ]
+  },
+  {
+    "id": "1-missing",
+    "category": "missing",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 110 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "investment?",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  },
+  {
+    "id": "1-conflict",
+    "category": "conflict",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 110 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为130 MWh。",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "storage capacity?",
+    "role": "public",
+    "expected_status": "conflict",
+    "expected_sources": [
+      "a",
+      "b"
+    ],
+    "expected_values": [
+      "110 MWh",
+      "130 MWh"
+    ]
+  },
+  {
+    "id": "1-revision",
+    "category": "supersession",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 110 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为130 MWh。",
+        "project": "eval",
+        "access": "public",
+        "version": 2,
+        "supersedes": "a"
+      }
+    ],
+    "question": "容量？",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "b"
+    ],
+    "expected_values": [
+      "130 MWh"
+    ]
+  },
+  {
+    "id": "1-units",
+    "category": "equivalent_units",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 110 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "容量为110000 kWh。",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a",
+      "b"
+    ],
+    "expected_values": [
+      "110 MWh"
+    ]
+  },
+  {
+    "id": "1-joined",
+    "category": "cross_document_fields",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 110 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "p",
+        "title": "Synthetic p",
+        "text": "Rated power: 55 MW.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity and power?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a",
+      "p"
+    ],
+    "expected_values": [
+      "110 MWh",
+      "55 MW"
+    ]
+  },
+  {
+    "id": "1-access",
+    "category": "restricted_missing",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 110 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "s",
+        "title": "Synthetic s",
+        "text": "Investment: 110 million CNY.",
+        "project": "eval",
+        "access": "internal"
+      }
+    ],
+    "question": "投资额？",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  },
+  {
+    "id": "1-partial",
+    "category": "partial_answer",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 110 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity and investment?",
+    "role": "public",
+    "expected_status": "partial",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "110 MWh"
+    ]
+  },
+  {
+    "id": "1-hidden-revision",
+    "category": "restricted_revision",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 110 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为130 MWh。",
+        "project": "eval",
+        "access": "internal",
+        "version": 2,
+        "supersedes": "a"
+      }
+    ],
+    "question": "capacity?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "110 MWh"
+    ]
+  },
+  {
+    "id": "1-unknown",
+    "category": "unsupported_question",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 110 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "What is the supplier telephone number?",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  },
+  {
+    "id": "2-fact",
+    "category": "answerable",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 120 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "容量是多少？",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "120 MWh"
+    ]
+  },
+  {
+    "id": "2-missing",
+    "category": "missing",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 120 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "investment?",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  },
+  {
+    "id": "2-conflict",
+    "category": "conflict",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 120 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为140 MWh。",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "storage capacity?",
+    "role": "public",
+    "expected_status": "conflict",
+    "expected_sources": [
+      "a",
+      "b"
+    ],
+    "expected_values": [
+      "120 MWh",
+      "140 MWh"
+    ]
+  },
+  {
+    "id": "2-revision",
+    "category": "supersession",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 120 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为140 MWh。",
+        "project": "eval",
+        "access": "public",
+        "version": 2,
+        "supersedes": "a"
+      }
+    ],
+    "question": "容量？",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "b"
+    ],
+    "expected_values": [
+      "140 MWh"
+    ]
+  },
+  {
+    "id": "2-units",
+    "category": "equivalent_units",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 120 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "容量为120000 kWh。",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a",
+      "b"
+    ],
+    "expected_values": [
+      "120 MWh"
+    ]
+  },
+  {
+    "id": "2-joined",
+    "category": "cross_document_fields",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 120 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "p",
+        "title": "Synthetic p",
+        "text": "Rated power: 60 MW.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity and power?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a",
+      "p"
+    ],
+    "expected_values": [
+      "120 MWh",
+      "60 MW"
+    ]
+  },
+  {
+    "id": "2-access",
+    "category": "restricted_missing",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 120 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "s",
+        "title": "Synthetic s",
+        "text": "Investment: 120 million CNY.",
+        "project": "eval",
+        "access": "internal"
+      }
+    ],
+    "question": "投资额？",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  },
+  {
+    "id": "2-partial",
+    "category": "partial_answer",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 120 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity and investment?",
+    "role": "public",
+    "expected_status": "partial",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "120 MWh"
+    ]
+  },
+  {
+    "id": "2-hidden-revision",
+    "category": "restricted_revision",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 120 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为140 MWh。",
+        "project": "eval",
+        "access": "internal",
+        "version": 2,
+        "supersedes": "a"
+      }
+    ],
+    "question": "capacity?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "120 MWh"
+    ]
+  },
+  {
+    "id": "2-unknown",
+    "category": "unsupported_question",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 120 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "What is the supplier telephone number?",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  },
+  {
+    "id": "3-fact",
+    "category": "answerable",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 130 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "容量是多少？",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "130 MWh"
+    ]
+  },
+  {
+    "id": "3-missing",
+    "category": "missing",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 130 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "investment?",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  },
+  {
+    "id": "3-conflict",
+    "category": "conflict",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 130 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为150 MWh。",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "storage capacity?",
+    "role": "public",
+    "expected_status": "conflict",
+    "expected_sources": [
+      "a",
+      "b"
+    ],
+    "expected_values": [
+      "130 MWh",
+      "150 MWh"
+    ]
+  },
+  {
+    "id": "3-revision",
+    "category": "supersession",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 130 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为150 MWh。",
+        "project": "eval",
+        "access": "public",
+        "version": 2,
+        "supersedes": "a"
+      }
+    ],
+    "question": "容量？",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "b"
+    ],
+    "expected_values": [
+      "150 MWh"
+    ]
+  },
+  {
+    "id": "3-units",
+    "category": "equivalent_units",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 130 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "容量为130000 kWh。",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a",
+      "b"
+    ],
+    "expected_values": [
+      "130 MWh"
+    ]
+  },
+  {
+    "id": "3-joined",
+    "category": "cross_document_fields",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 130 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "p",
+        "title": "Synthetic p",
+        "text": "Rated power: 65 MW.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity and power?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a",
+      "p"
+    ],
+    "expected_values": [
+      "130 MWh",
+      "65 MW"
+    ]
+  },
+  {
+    "id": "3-access",
+    "category": "restricted_missing",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 130 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "s",
+        "title": "Synthetic s",
+        "text": "Investment: 130 million CNY.",
+        "project": "eval",
+        "access": "internal"
+      }
+    ],
+    "question": "投资额？",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  },
+  {
+    "id": "3-partial",
+    "category": "partial_answer",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 130 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "capacity and investment?",
+    "role": "public",
+    "expected_status": "partial",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "130 MWh"
+    ]
+  },
+  {
+    "id": "3-hidden-revision",
+    "category": "restricted_revision",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 130 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      },
+      {
+        "id": "b",
+        "title": "Synthetic b",
+        "text": "储能容量为150 MWh。",
+        "project": "eval",
+        "access": "internal",
+        "version": 2,
+        "supersedes": "a"
+      }
+    ],
+    "question": "capacity?",
+    "role": "public",
+    "expected_status": "supported",
+    "expected_sources": [
+      "a"
+    ],
+    "expected_values": [
+      "130 MWh"
+    ]
+  },
+  {
+    "id": "3-unknown",
+    "category": "unsupported_question",
+    "documents": [
+      {
+        "id": "a",
+        "title": "Synthetic a",
+        "text": "Storage capacity: 130 MWh.\nOperator: Example Team.",
+        "project": "eval",
+        "access": "public"
+      }
+    ],
+    "question": "What is the supplier telephone number?",
+    "role": "public",
+    "expected_status": "insufficient",
+    "expected_sources": [],
+    "expected_values": []
+  }
+]

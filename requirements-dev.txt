@@ -1,0 +1,2 @@
+-r requirements-pdf.txt
+# Browser verification additionally uses Node.js >=22 and an existing Chrome CDP endpoint.

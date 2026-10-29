@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ST-01",
+    "title": "示例储能站 · 工程概况",
+    "project": "storage-demo",
+    "version": 1,
+    "access": "public",
+    "text": "本文件为合成演示资料，不代表真实项目。\n储能容量为100 MWh。\n额定功率为50 MW。\n放电时长为2小时。\n运营方：示例能源技术中心。"
+  },
+  {
+    "id": "ST-02",
+    "title": "示例储能站 · 待核技术记录",
+    "project": "storage-demo",
+    "version": 1,
+    "access": "public",
+    "text": "本记录未声明替代工程概况。\nStorage capacity: 120 MWh.\nRated power: 50000 kW.\nDischarge duration: 120 minutes."
+  },
+  {
+    "id": "ST-03",
+    "title": "示例储能站 · 内部预算模拟",
+    "project": "storage-demo",
+    "version": 1,
+    "access": "internal",
+    "text": "以下为模拟内部资料。\nInvestment: 280 million CNY."
+  }
+]
